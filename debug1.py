@@ -1,7 +1,7 @@
 import pandas as pd
 # on ajoute un bloc try/except pour gérer les erreurs potentielles lors de la lecture du fichier CSV
 try:
-    df = pd.read_csv("./data/commandes2025.csv", sep=";", encoding="latin-1")
+    df = pd.read_csv("./data/commandes_2025.csv", sep=";", encoding="latin-1")
     # 1. Une erreur dans le nom de fichier (underscore entre commandes et 2025 empêchait le script de trouver le fichier
     #
     # 2. Le séparateur dans le fichier CSV est un 'point virgule', or la fonction read_csv() utilise le séparateur 'virgule' par défaut.
