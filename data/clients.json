@@ -1,0 +1,3434 @@
+[
+  {
+    "id_client": "C0248",
+    "nom": "Dubois",
+    "prenom": "Emma",
+    "email": "emma.dubois248@example.org",
+    "adresse": {
+      "ville": "SÈTE",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2025-07-21"
+  },
+  {
+    "id_client": "C0081",
+    "nom": "Muller",
+    "prenom": "Louis",
+    "email": "louis.muller81@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2025-07-18"
+  },
+  {
+    "id_client": "C0214",
+    "nom": "Petit",
+    "prenom": "Enzo",
+    "email": "enzo.petit214@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2025-04-05"
+  },
+  {
+    "id_client": "C0105",
+    "nom": "Blanc",
+    "prenom": "Inès",
+    "email": "ines.blanc105@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "20/01/2025"
+  },
+  {
+    "id_client": "C0024",
+    "nom": "Garnier",
+    "prenom": "Samir",
+    "email": "samir.garnier24@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2025-08-20"
+  },
+  {
+    "id_client": "C0079",
+    "nom": "Girard",
+    "prenom": "Julie",
+    "email": "julie.girard79@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": 34700
+    },
+    "date_inscription": "24/02/2025"
+  },
+  {
+    "id_client": "C0060",
+    "nom": "David",
+    "prenom": "Élodie",
+    "email": "elodie.david60@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "09/04/2025"
+  },
+  {
+    "id_client": "C0084",
+    "nom": "Bonnet",
+    "prenom": "Camille",
+    "email": "camille.bonnet84@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-05-25"
+  },
+  {
+    "id_client": "C0137",
+    "nom": "Lefebvre",
+    "prenom": "Sarah",
+    "email": "sarah.lefebvre137@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-03-21"
+  },
+  {
+    "id_client": "C0187",
+    "nom": "Laurent",
+    "prenom": "Anaïs",
+    "email": "anais.laurent187@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2025-01-07"
+  },
+  {
+    "id_client": "C0186",
+    "nom": "Henry",
+    "prenom": "Clara",
+    "email": "clara.henry186@example.org",
+    "adresse": {
+      "ville": "Agde ",
+      "code_postal": "34300"
+    },
+    "date_inscription": "05/02/2025"
+  },
+  {
+    "id_client": "C0197",
+    "nom": "Vincent",
+    "prenom": "Chloé",
+    "email": "chloe.vincent197@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2022-06-21"
+  },
+  {
+    "id_client": "C0068",
+    "nom": "Fournier",
+    "prenom": "Nathan",
+    "email": "nathan.fournier68@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2023-06-19"
+  },
+  {
+    "id_client": "C0266",
+    "nom": "Garcia",
+    "prenom": "Camille",
+    "email": "camille.garcia266@example.org",
+    "adresse": {
+      "ville": "Nîmes ",
+      "code_postal": "30000"
+    },
+    "date_inscription": "26/04/2025"
+  },
+  {
+    "id_client": "C0235",
+    "nom": "Lefebvre",
+    "prenom": "Lucas",
+    "email": "lucas.lefebvre235@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "17/04/2025"
+  },
+  {
+    "id_client": "C0290",
+    "nom": "Dupont",
+    "prenom": "Lucas",
+    "email": "lucas.dupont290@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2022-04-26"
+  },
+  {
+    "id_client": "C0039",
+    "nom": "Simon",
+    "prenom": "Inès",
+    "email": "ines.simon39@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-10-16"
+  },
+  {
+    "id_client": "C0305",
+    "nom": "VINCENT",
+    "prenom": "louis",
+    "email": "LOUIS.VINCENT226@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": 30100
+    },
+    "date_inscription": "2024-07-11"
+  },
+  {
+    "id_client": "C0146",
+    "nom": "François",
+    "prenom": "Emma",
+    "email": "emma.francois146@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2025-03-18"
+  },
+  {
+    "id_client": "C0237",
+    "nom": "Bonnet",
+    "prenom": "Enzo",
+    "email": "enzo.bonnet237@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": 34300
+    },
+    "date_inscription": "28/06/2022"
+  },
+  {
+    "id_client": "C0008",
+    "nom": "Dubois",
+    "prenom": "Louis",
+    "email": "louis.dubois8@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2023-04-08"
+  },
+  {
+    "id_client": "C0294",
+    "nom": "Roussel",
+    "prenom": "Sarah",
+    "email": null,
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "15/04/2024"
+  },
+  {
+    "id_client": "C0025",
+    "nom": "Petit",
+    "prenom": "Chloé",
+    "email": "chloe.petit25@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2025-02-01"
+  },
+  {
+    "id_client": "C0244",
+    "nom": "Roux",
+    "prenom": "Alice",
+    "email": "alice.roux244@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2022-05-18"
+  },
+  {
+    "id_client": "C0005",
+    "nom": "Henry",
+    "prenom": "Anaïs",
+    "email": "anais.henry5@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-09-10"
+  },
+  {
+    "id_client": "C0110",
+    "nom": "Faure",
+    "prenom": "Hugo",
+    "email": "hugo.faure110@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": null
+    },
+    "date_inscription": "22/01/2022"
+  },
+  {
+    "id_client": "C0094",
+    "nom": "Michel",
+    "prenom": "Maxime",
+    "email": "maxime.michel94@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-04-23"
+  },
+  {
+    "id_client": "C0217",
+    "nom": "Lambert",
+    "prenom": "Emma",
+    "email": "emma.lambert217@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "18/06/2024"
+  },
+  {
+    "id_client": "C0086",
+    "nom": "Lambert",
+    "prenom": "Enzo",
+    "email": "enzo.lambert86@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "28/09/2022"
+  },
+  {
+    "id_client": "C0142",
+    "nom": "Petit",
+    "prenom": "Inès",
+    "email": "ines.petit142@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-08-23"
+  },
+  {
+    "id_client": "C0232",
+    "nom": "Bertrand",
+    "prenom": "Alice",
+    "email": "alice.bertrand232@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2025-09-12"
+  },
+  {
+    "id_client": "C0284",
+    "nom": "Bertrand",
+    "prenom": "Théo",
+    "email": "theo.bertrand284@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2023-11-03"
+  },
+  {
+    "id_client": "C0028",
+    "nom": "Simon",
+    "prenom": "Nathan",
+    "email": "nathan.simon28@example.org",
+    "adresse": {
+      "ville": "Millau ",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2023-10-01"
+  },
+  {
+    "id_client": "C0227",
+    "nom": "Simon",
+    "prenom": "Mathis",
+    "email": "mathis.simon227@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "17/08/2024"
+  },
+  {
+    "id_client": "C0088",
+    "nom": "Richard",
+    "prenom": "Antoine",
+    "email": "antoine.richard88@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2022-09-13"
+  },
+  {
+    "id_client": "C0065",
+    "nom": "François",
+    "prenom": "Lucas",
+    "email": "lucas.francois65@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2022-06-14"
+  },
+  {
+    "id_client": "C0157",
+    "nom": "Lefebvre",
+    "prenom": "Inès",
+    "email": "ines.lefebvre157@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": 30000
+    },
+    "date_inscription": "2024-10-02"
+  },
+  {
+    "id_client": "C0098",
+    "nom": "Garcia",
+    "prenom": "Adam",
+    "email": "adam.garcia98@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-04-09"
+  },
+  {
+    "id_client": "C0297",
+    "nom": "François",
+    "prenom": "Hugo",
+    "email": "hugo.francois297@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-02-04"
+  },
+  {
+    "id_client": "C0133",
+    "nom": "Perrin",
+    "prenom": "Chloé",
+    "email": "chloe.perrin133@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "15/10/2023"
+  },
+  {
+    "id_client": "C0033",
+    "nom": "Leroy",
+    "prenom": "Élodie",
+    "email": "elodie.leroy33@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "03/08/2022"
+  },
+  {
+    "id_client": "C0300",
+    "nom": "Lefebvre",
+    "prenom": "Emma",
+    "email": "emma.lefebvre300@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2023-07-06"
+  },
+  {
+    "id_client": "C0154",
+    "nom": "Simon",
+    "prenom": "Théo",
+    "email": "theo.simon154@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "18/02/2025"
+  },
+  {
+    "id_client": "C0144",
+    "nom": "Bonnet",
+    "prenom": "Manon",
+    "email": "manon.bonnet144@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "22/10/2022"
+  },
+  {
+    "id_client": "C0295",
+    "nom": "Dupont",
+    "prenom": "Jade",
+    "email": "jade.dupont295@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "26/07/2025"
+  },
+  {
+    "id_client": "C0019",
+    "nom": "Lefebvre",
+    "prenom": "Hugo",
+    "email": "hugo.lefebvre19@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-09-11"
+  },
+  {
+    "id_client": "C0310",
+    "nom": "THOMAS",
+    "prenom": "alice",
+    "email": null,
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "02/11/2023"
+  },
+  {
+    "id_client": "C0036",
+    "nom": "Simon",
+    "prenom": "Louis",
+    "email": "louis.simon36@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2022-05-21"
+  },
+  {
+    "id_client": "C0200",
+    "nom": "Martinez",
+    "prenom": "Samir",
+    "email": "samir.martinez200@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": null
+    },
+    "date_inscription": "2025-01-09"
+  },
+  {
+    "id_client": "C0262",
+    "nom": "Bernard",
+    "prenom": "Zoé",
+    "email": "zoe.bernard262@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2025-10-08"
+  },
+  {
+    "id_client": "C0209",
+    "nom": "Legrand",
+    "prenom": "Anaïs",
+    "email": "anais.legrand209@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "12/04/2022"
+  },
+  {
+    "id_client": "C0183",
+    "nom": "Morel",
+    "prenom": "Zoé",
+    "email": "zoe.morel183@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-04-18"
+  },
+  {
+    "id_client": "C0058",
+    "nom": "Laurent",
+    "prenom": "Sarah",
+    "email": "sarah.laurent58@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2025-03-09"
+  },
+  {
+    "id_client": "C0268",
+    "nom": "Nicolas",
+    "prenom": "Jules",
+    "email": "jules.nicolas268@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2023-07-01"
+  },
+  {
+    "id_client": "C0149",
+    "nom": "Thomas",
+    "prenom": "Romain",
+    "email": "romain.thomas149@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-01-15"
+  },
+  {
+    "id_client": "C0010",
+    "nom": "Roux",
+    "prenom": "Zoé",
+    "email": "zoe.roux10@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "15/06/2024"
+  },
+  {
+    "id_client": "C0082",
+    "nom": "Perrin",
+    "prenom": "Antoine",
+    "email": "antoine.perrin82@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": 34300
+    },
+    "date_inscription": "24/01/2022"
+  },
+  {
+    "id_client": "C0285",
+    "nom": "Michel",
+    "prenom": "Lina",
+    "email": "lina.michel285@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2022-08-25"
+  },
+  {
+    "id_client": "C0156",
+    "nom": "Bernard",
+    "prenom": "Anaïs",
+    "email": "anais.bernard156@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2022-09-20"
+  },
+  {
+    "id_client": "C0078",
+    "nom": "Roussel",
+    "prenom": "Nadia",
+    "email": "nadia.roussel78@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2023-03-19"
+  },
+  {
+    "id_client": "C0259",
+    "nom": "Rousseau",
+    "prenom": "Alice",
+    "email": "alice.rousseau259@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-05-19"
+  },
+  {
+    "id_client": "C0007",
+    "nom": "Michel",
+    "prenom": "Léa",
+    "email": "lea.michel7@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": 34000
+    },
+    "date_inscription": "2024-09-25"
+  },
+  {
+    "id_client": "C0051",
+    "nom": "Durand",
+    "prenom": "Lucas",
+    "email": "lucas.durand51@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2024-10-24"
+  },
+  {
+    "id_client": "C0168",
+    "nom": "Martin",
+    "prenom": "Julie",
+    "email": "julie.martin168@example.org",
+    "adresse": {
+      "ville": "MONTPELLIER",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2024-02-18"
+  },
+  {
+    "id_client": "C0296",
+    "nom": "Bonnet",
+    "prenom": "Maxime",
+    "email": "maxime.bonnet296@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "29/09/2022"
+  },
+  {
+    "id_client": "C0165",
+    "nom": "Girard",
+    "prenom": "Théo",
+    "email": "theo.girard165@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "19/06/2022"
+  },
+  {
+    "id_client": "C0205",
+    "nom": "Durand",
+    "prenom": "Nathan",
+    "email": null,
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2022-09-28"
+  },
+  {
+    "id_client": "C0063",
+    "nom": "Roux",
+    "prenom": "Anaïs",
+    "email": "anais.roux63@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2024-09-24"
+  },
+  {
+    "id_client": "C0252",
+    "nom": "Simon",
+    "prenom": "Adam",
+    "email": "adam.simon252@example.org",
+    "adresse": {
+      "ville": "Nîmes ",
+      "code_postal": "30000"
+    },
+    "date_inscription": "08/09/2025"
+  },
+  {
+    "id_client": "C0066",
+    "nom": "Roux",
+    "prenom": "Inès",
+    "email": "ines.roux66@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": null
+    },
+    "date_inscription": "2025-10-11"
+  },
+  {
+    "id_client": "C0212",
+    "nom": "Garcia",
+    "prenom": "Lina",
+    "email": "lina.garcia212@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-07-24"
+  },
+  {
+    "id_client": "C0138",
+    "nom": "Henry",
+    "prenom": "Enzo",
+    "email": "enzo.henry138@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-03-17"
+  },
+  {
+    "id_client": "C0243",
+    "nom": "Martinez",
+    "prenom": "Adam",
+    "email": "adam.martinez243@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2025-05-04"
+  },
+  {
+    "id_client": "C0136",
+    "nom": "Roussel",
+    "prenom": "Adam",
+    "email": "adam.roussel136@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2025-10-12"
+  },
+  {
+    "id_client": "C0174",
+    "nom": "Bernard",
+    "prenom": "Lucas",
+    "email": "lucas.bernard174@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-01-17"
+  },
+  {
+    "id_client": "C0251",
+    "nom": "Blanc",
+    "prenom": "Léa",
+    "email": "lea.blanc251@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-08-17"
+  },
+  {
+    "id_client": "C0069",
+    "nom": "Bernard",
+    "prenom": "Emma",
+    "email": "emma.bernard69@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": null
+    },
+    "date_inscription": "2024-02-06"
+  },
+  {
+    "id_client": "C0184",
+    "nom": "Fournier",
+    "prenom": "Zoé",
+    "email": "zoe.fournier184@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2025-05-08"
+  },
+  {
+    "id_client": "C0270",
+    "nom": "Bertrand",
+    "prenom": "Camille",
+    "email": "camille.bertrand270@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-03-20"
+  },
+  {
+    "id_client": "C0299",
+    "nom": "Garnier",
+    "prenom": "Zoé",
+    "email": "zoe.garnier299@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2024-05-04"
+  },
+  {
+    "id_client": "C0202",
+    "nom": "Martinez",
+    "prenom": "Anaïs",
+    "email": "anais.martinez202@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": 34000
+    },
+    "date_inscription": "2022-04-12"
+  },
+  {
+    "id_client": "C0117",
+    "nom": "Dupont",
+    "prenom": "Sarah",
+    "email": "sarah.dupont117@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": 34400
+    },
+    "date_inscription": "06/01/2024"
+  },
+  {
+    "id_client": "C0160",
+    "nom": "Perrin",
+    "prenom": "Élodie",
+    "email": "elodie.perrin160@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2023-11-11"
+  },
+  {
+    "id_client": "C0112",
+    "nom": "François",
+    "prenom": "Élodie",
+    "email": "elodie.francois112@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2022-05-30"
+  },
+  {
+    "id_client": "C0013",
+    "nom": "Richard",
+    "prenom": "Élodie",
+    "email": "elodie.richard13@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2022-12-22"
+  },
+  {
+    "id_client": "C0204",
+    "nom": "Roux",
+    "prenom": "Anaïs",
+    "email": "anais.roux204@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-08-19"
+  },
+  {
+    "id_client": "C0141",
+    "nom": "Girard",
+    "prenom": "Hugo",
+    "email": "hugo.girard141@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2025-07-09"
+  },
+  {
+    "id_client": "C0015",
+    "nom": "Robert",
+    "prenom": "Romain",
+    "email": "romain.robert15@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2025-07-10"
+  },
+  {
+    "id_client": "C0061",
+    "nom": "Guérin",
+    "prenom": "Hugo",
+    "email": "hugo.guerin61@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-08-24"
+  },
+  {
+    "id_client": "C0179",
+    "nom": "Dupont",
+    "prenom": "Nadia",
+    "email": "nadia.dupont179@example.org",
+    "adresse": {
+      "ville": "MAUGUIO",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2025-09-20"
+  },
+  {
+    "id_client": "C0046",
+    "nom": "Muller",
+    "prenom": "Lina",
+    "email": "lina.muller46@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": null
+    },
+    "date_inscription": "2024-01-02"
+  },
+  {
+    "id_client": "C0307",
+    "nom": "MARTINEZ",
+    "prenom": "samir",
+    "email": null,
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-01-09"
+  },
+  {
+    "id_client": "C0234",
+    "nom": "Mercier",
+    "prenom": "Camille",
+    "email": "camille.mercier234@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2023-09-24"
+  },
+  {
+    "id_client": "C0021",
+    "nom": "Blanc",
+    "prenom": "Zoé",
+    "email": "zoe.blanc21@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2024-03-29"
+  },
+  {
+    "id_client": "C0087",
+    "nom": "Leroy",
+    "prenom": "Adam",
+    "email": "adam.leroy87@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2023-03-22"
+  },
+  {
+    "id_client": "C0129",
+    "nom": "Henry",
+    "prenom": "Antoine",
+    "email": "antoine.henry129@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "14/08/2023"
+  },
+  {
+    "id_client": "C0080",
+    "nom": "Petit",
+    "prenom": "Alice",
+    "email": "alice.petit80@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": 34400
+    },
+    "date_inscription": "21/08/2022"
+  },
+  {
+    "id_client": "C0231",
+    "nom": "Girard",
+    "prenom": "Manon",
+    "email": "manon.girard231@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2025-06-25"
+  },
+  {
+    "id_client": "C0224",
+    "nom": "David",
+    "prenom": "Camille",
+    "email": "camille.david224@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2022-03-10"
+  },
+  {
+    "id_client": "C0180",
+    "nom": "Henry",
+    "prenom": "Anaïs",
+    "email": "anais.henry180@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "16/01/2024"
+  },
+  {
+    "id_client": "C0127",
+    "nom": "Muller",
+    "prenom": "Jade",
+    "email": "jade.muller127@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2025-07-14"
+  },
+  {
+    "id_client": "C0258",
+    "nom": "Vincent",
+    "prenom": "Mathis",
+    "email": "mathis.vincent258@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2023-03-09"
+  },
+  {
+    "id_client": "C0045",
+    "nom": "Martin",
+    "prenom": "Adam",
+    "email": "adam.martin45@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2022-02-02"
+  },
+  {
+    "id_client": "C0074",
+    "nom": "Leroy",
+    "prenom": "Emma",
+    "email": "emma.leroy74@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "25/09/2025"
+  },
+  {
+    "id_client": "C0249",
+    "nom": "Thomas",
+    "prenom": "Alice",
+    "email": "alice.thomas249@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": 34000
+    },
+    "date_inscription": "2023-11-02"
+  },
+  {
+    "id_client": "C0083",
+    "nom": "Simon",
+    "prenom": "Julie",
+    "email": "julie.simon83@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": 34130
+    },
+    "date_inscription": "2023-09-17"
+  },
+  {
+    "id_client": "C0099",
+    "nom": "Garnier",
+    "prenom": "Théo",
+    "email": "theo.garnier99@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2022-12-23"
+  },
+  {
+    "id_client": "C0275",
+    "nom": "Garcia",
+    "prenom": "Chloé",
+    "email": "chloe.garcia275@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2022-08-08"
+  },
+  {
+    "id_client": "C0289",
+    "nom": "Bertrand",
+    "prenom": "Alice",
+    "email": "alice.bertrand289@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-07-03"
+  },
+  {
+    "id_client": "C0056",
+    "nom": "Guérin",
+    "prenom": "Adam",
+    "email": "adam.guerin56@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "03/07/2023"
+  },
+  {
+    "id_client": "C0228",
+    "nom": "Bertrand",
+    "prenom": "Julie",
+    "email": "julie.bertrand228@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2024-02-22"
+  },
+  {
+    "id_client": "C0267",
+    "nom": "Vincent",
+    "prenom": "Emma",
+    "email": "emma.vincent267@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "31/01/2023"
+  },
+  {
+    "id_client": "C0276",
+    "nom": "Rousseau",
+    "prenom": "Léa",
+    "email": "lea.rousseau276@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2022-03-19"
+  },
+  {
+    "id_client": "C0236",
+    "nom": "Bonnet",
+    "prenom": "Mathis",
+    "email": "mathis.bonnet236@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2024-10-27"
+  },
+  {
+    "id_client": "C0219",
+    "nom": "Garnier",
+    "prenom": "Nadia",
+    "email": "nadia.garnier219@example.org",
+    "adresse": {
+      "ville": "Mauguio ",
+      "code_postal": "34130"
+    },
+    "date_inscription": "12/01/2025"
+  },
+  {
+    "id_client": "C0271",
+    "nom": "Richard",
+    "prenom": "Théo",
+    "email": "theo.richard271@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": 34130
+    },
+    "date_inscription": "2022-09-21"
+  },
+  {
+    "id_client": "C0053",
+    "nom": "Perrin",
+    "prenom": "Samir",
+    "email": "samir.perrin53@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": 34700
+    },
+    "date_inscription": "2022-04-29"
+  },
+  {
+    "id_client": "C0059",
+    "nom": "David",
+    "prenom": "Nathan",
+    "email": "nathan.david59@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "20/09/2023"
+  },
+  {
+    "id_client": "C0176",
+    "nom": "Roux",
+    "prenom": "Lucas",
+    "email": "lucas.roux176@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2025-08-08"
+  },
+  {
+    "id_client": "C0150",
+    "nom": "Blanc",
+    "prenom": "Inès",
+    "email": "ines.blanc150@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "25/06/2024"
+  },
+  {
+    "id_client": "C0106",
+    "nom": "Michel",
+    "prenom": "Lina",
+    "email": "lina.michel106@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-05-09"
+  },
+  {
+    "id_client": "C0177",
+    "nom": "Martinez",
+    "prenom": "Antoine",
+    "email": "antoine.martinez177@example.org",
+    "adresse": {
+      "ville": "Mauguio ",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2022-12-31"
+  },
+  {
+    "id_client": "C0009",
+    "nom": "Guérin",
+    "prenom": "Adam",
+    "email": "adam.guerin9@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "15/04/2022"
+  },
+  {
+    "id_client": "C0257",
+    "nom": "Bertrand",
+    "prenom": "Hugo",
+    "email": "hugo.bertrand257@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2023-08-06"
+  },
+  {
+    "id_client": "C0195",
+    "nom": "Simon",
+    "prenom": "Nathan",
+    "email": "nathan.simon195@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2025-08-03"
+  },
+  {
+    "id_client": "C0216",
+    "nom": "Moreau",
+    "prenom": "Nathan",
+    "email": "nathan.moreau216@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-12-21"
+  },
+  {
+    "id_client": "C0070",
+    "nom": "Simon",
+    "prenom": "Louis",
+    "email": "louis.simon70@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2024-03-19"
+  },
+  {
+    "id_client": "C0100",
+    "nom": "Dupont",
+    "prenom": "Nadia",
+    "email": "nadia.dupont100@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2022-09-20"
+  },
+  {
+    "id_client": "C0049",
+    "nom": "Perrin",
+    "prenom": "Louis",
+    "email": "louis.perrin49@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2025-07-24"
+  },
+  {
+    "id_client": "C0159",
+    "nom": "Lefebvre",
+    "prenom": "Emma",
+    "email": "emma.lefebvre159@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-07-29"
+  },
+  {
+    "id_client": "C0054",
+    "nom": "Perrin",
+    "prenom": "Hugo",
+    "email": "hugo.perrin54@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2024-12-17"
+  },
+  {
+    "id_client": "C0113",
+    "nom": "Martin",
+    "prenom": "Camille",
+    "email": "camille.martin113@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-03-20"
+  },
+  {
+    "id_client": "C0092",
+    "nom": "Fournier",
+    "prenom": "Nathan",
+    "email": "nathan.fournier92@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2023-02-28"
+  },
+  {
+    "id_client": "C0192",
+    "nom": "Durand",
+    "prenom": "Manon",
+    "email": "manon.durand192@example.org",
+    "adresse": {
+      "ville": "Pézenas ",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2022-12-08"
+  },
+  {
+    "id_client": "C0309",
+    "nom": "SIMON",
+    "prenom": "theo",
+    "email": "THEO.SIMON154@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2025-02-18"
+  },
+  {
+    "id_client": "C0067",
+    "nom": "Dubois",
+    "prenom": "Léa",
+    "email": "lea.dubois67@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "26/10/2023"
+  },
+  {
+    "id_client": "C0101",
+    "nom": "Leroy",
+    "prenom": "Nathan",
+    "email": "nathan.leroy101@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2022-04-19"
+  },
+  {
+    "id_client": "C0173",
+    "nom": "Martinez",
+    "prenom": "Jules",
+    "email": "jules.martinez173@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2025-09-23"
+  },
+  {
+    "id_client": "C0116",
+    "nom": "Faure",
+    "prenom": "Sarah",
+    "email": "sarah.faure116@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "05/10/2025"
+  },
+  {
+    "id_client": "C0031",
+    "nom": "Rousseau",
+    "prenom": "Paul",
+    "email": "paul.rousseau31@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "23/02/2024"
+  },
+  {
+    "id_client": "C0255",
+    "nom": "Leroy",
+    "prenom": "Inès",
+    "email": "ines.leroy255@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "14/01/2023"
+  },
+  {
+    "id_client": "C0002",
+    "nom": "Moreau",
+    "prenom": "Paul",
+    "email": "paul.moreau2@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2025-01-23"
+  },
+  {
+    "id_client": "C0181",
+    "nom": "Morel",
+    "prenom": "Chloé",
+    "email": "chloe.morel181@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2025-09-05"
+  },
+  {
+    "id_client": "C0264",
+    "nom": "Vincent",
+    "prenom": "Julie",
+    "email": "julie.vincent264@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "28/09/2022"
+  },
+  {
+    "id_client": "C0040",
+    "nom": "Blanc",
+    "prenom": "Clara",
+    "email": "clara.blanc40@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2024-06-14"
+  },
+  {
+    "id_client": "C0004",
+    "nom": "Martinez",
+    "prenom": "Alice",
+    "email": "alice.martinez4@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2023-05-27"
+  },
+  {
+    "id_client": "C0221",
+    "nom": "André",
+    "prenom": "Léa",
+    "email": "lea.andre221@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-03-09"
+  },
+  {
+    "id_client": "C0121",
+    "nom": "Morel",
+    "prenom": "Enzo",
+    "email": "enzo.morel121@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "20/11/2024"
+  },
+  {
+    "id_client": "C0274",
+    "nom": "Laurent",
+    "prenom": "Samir",
+    "email": "samir.laurent274@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "02/05/2022"
+  },
+  {
+    "id_client": "C0304",
+    "nom": "RICHARD",
+    "prenom": "elodie",
+    "email": null,
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2022-12-22"
+  },
+  {
+    "id_client": "C0071",
+    "nom": "Bonnet",
+    "prenom": "Manon",
+    "email": "manon.bonnet71@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2022-10-22"
+  },
+  {
+    "id_client": "C0211",
+    "nom": "Mercier",
+    "prenom": "Chloé",
+    "email": "chloe.mercier211@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2023-08-09"
+  },
+  {
+    "id_client": "C0120",
+    "nom": "Lambert",
+    "prenom": "Chloé",
+    "email": "chloe.lambert120@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2023-01-18"
+  },
+  {
+    "id_client": "C0057",
+    "nom": "Mercier",
+    "prenom": "Élodie",
+    "email": "elodie.mercier57@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": 34120
+    },
+    "date_inscription": "2025-08-14"
+  },
+  {
+    "id_client": "C0288",
+    "nom": "André",
+    "prenom": "Inès",
+    "email": "ines.andre288@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": 34300
+    },
+    "date_inscription": "06/08/2022"
+  },
+  {
+    "id_client": "C0185",
+    "nom": "Faure",
+    "prenom": "Julie",
+    "email": null,
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "15/07/2023"
+  },
+  {
+    "id_client": "C0143",
+    "nom": "Henry",
+    "prenom": "Mathis",
+    "email": "mathis.henry143@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-09-09"
+  },
+  {
+    "id_client": "C0016",
+    "nom": "Garnier",
+    "prenom": "Jules",
+    "email": "jules.garnier16@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2022-03-04"
+  },
+  {
+    "id_client": "C0014",
+    "nom": "Mercier",
+    "prenom": "Sarah",
+    "email": "sarah.mercier14@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2022-09-14"
+  },
+  {
+    "id_client": "C0265",
+    "nom": "David",
+    "prenom": "Chloé",
+    "email": "chloe.david265@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-03-16"
+  },
+  {
+    "id_client": "C0103",
+    "nom": "Michel",
+    "prenom": "Louis",
+    "email": null,
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": 34500
+    },
+    "date_inscription": "2024-04-11"
+  },
+  {
+    "id_client": "C0272",
+    "nom": "Roux",
+    "prenom": "Élodie",
+    "email": null,
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": 30100
+    },
+    "date_inscription": "2025-04-13"
+  },
+  {
+    "id_client": "C0245",
+    "nom": "Vincent",
+    "prenom": "Hugo",
+    "email": "hugo.vincent245@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "11/01/2022"
+  },
+  {
+    "id_client": "C0148",
+    "nom": "Laurent",
+    "prenom": "Alice",
+    "email": "alice.laurent148@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2024-05-14"
+  },
+  {
+    "id_client": "C0102",
+    "nom": "Girard",
+    "prenom": "Jules",
+    "email": "jules.girard102@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2025-07-17"
+  },
+  {
+    "id_client": "C0017",
+    "nom": "Muller",
+    "prenom": "Hugo",
+    "email": "hugo.muller17@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "17/08/2023"
+  },
+  {
+    "id_client": "C0153",
+    "nom": "Henry",
+    "prenom": "Mathis",
+    "email": "mathis.henry153@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2025-02-14"
+  },
+  {
+    "id_client": "C0035",
+    "nom": "Dupont",
+    "prenom": "Anaïs",
+    "email": "anais.dupont35@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2025-08-30"
+  },
+  {
+    "id_client": "C0041",
+    "nom": "Garcia",
+    "prenom": "Hugo",
+    "email": "hugo.garcia41@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2025-07-02"
+  },
+  {
+    "id_client": "C0247",
+    "nom": "Garcia",
+    "prenom": "Léa",
+    "email": "lea.garcia247@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-02-20"
+  },
+  {
+    "id_client": "C0104",
+    "nom": "Richard",
+    "prenom": "Élodie",
+    "email": "elodie.richard104@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2023-09-30"
+  },
+  {
+    "id_client": "C0151",
+    "nom": "Nicolas",
+    "prenom": "Adam",
+    "email": "adam.nicolas151@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2024-07-03"
+  },
+  {
+    "id_client": "C0050",
+    "nom": "Lefebvre",
+    "prenom": "Zoé",
+    "email": "zoe.lefebvre50@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2025-08-21"
+  },
+  {
+    "id_client": "C0091",
+    "nom": "Fournier",
+    "prenom": "Lucas",
+    "email": "lucas.fournier91@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-09-01"
+  },
+  {
+    "id_client": "C0222",
+    "nom": "Roussel",
+    "prenom": "Samir",
+    "email": "samir.roussel222@example.org",
+    "adresse": {
+      "ville": "AGDE",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-10-06"
+  },
+  {
+    "id_client": "C0140",
+    "nom": "Laurent",
+    "prenom": "Clara",
+    "email": "clara.laurent140@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2025-09-23"
+  },
+  {
+    "id_client": "C0032",
+    "nom": "Bonnet",
+    "prenom": "Inès",
+    "email": "ines.bonnet32@example.org",
+    "adresse": {
+      "ville": "BÉZIERS",
+      "code_postal": "34500"
+    },
+    "date_inscription": "31/08/2024"
+  },
+  {
+    "id_client": "C0171",
+    "nom": "Bonnet",
+    "prenom": "Chloé",
+    "email": "chloe.bonnet171@example.org",
+    "adresse": {
+      "ville": "Lodève ",
+      "code_postal": 34700
+    },
+    "date_inscription": "2024-06-30"
+  },
+  {
+    "id_client": "C0029",
+    "nom": "Michel",
+    "prenom": "Nadia",
+    "email": "nadia.michel29@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": 12100
+    },
+    "date_inscription": "2022-04-11"
+  },
+  {
+    "id_client": "C0118",
+    "nom": "Morel",
+    "prenom": "Jade",
+    "email": "jade.morel118@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2025-02-27"
+  },
+  {
+    "id_client": "C0199",
+    "nom": "Rousseau",
+    "prenom": "Lucas",
+    "email": "lucas.rousseau199@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2022-01-21"
+  },
+  {
+    "id_client": "C0301",
+    "nom": "NICOLAS",
+    "prenom": "alice",
+    "email": null,
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-10-31"
+  },
+  {
+    "id_client": "C0125",
+    "nom": "Vincent",
+    "prenom": "Adam",
+    "email": "adam.vincent125@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-04-26"
+  },
+  {
+    "id_client": "C0163",
+    "nom": "Lambert",
+    "prenom": "Zoé",
+    "email": "zoe.lambert163@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-04-12"
+  },
+  {
+    "id_client": "C0292",
+    "nom": "Girard",
+    "prenom": "Sarah",
+    "email": "sarah.girard292@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2023-07-06"
+  },
+  {
+    "id_client": "C0263",
+    "nom": "Leroy",
+    "prenom": "Sarah",
+    "email": "sarah.leroy263@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2024-02-28"
+  },
+  {
+    "id_client": "C0037",
+    "nom": "Simon",
+    "prenom": "Jade",
+    "email": "jade.simon37@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2023-12-30"
+  },
+  {
+    "id_client": "C0122",
+    "nom": "Roussel",
+    "prenom": "Maxime",
+    "email": "maxime.roussel122@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2022-02-28"
+  },
+  {
+    "id_client": "C0282",
+    "nom": "Vincent",
+    "prenom": "Élodie",
+    "email": "elodie.vincent282@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": 34130
+    },
+    "date_inscription": "2024-12-31"
+  },
+  {
+    "id_client": "C0254",
+    "nom": "Lefebvre",
+    "prenom": "Zoé",
+    "email": "zoe.lefebvre254@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2024-11-03"
+  },
+  {
+    "id_client": "C0207",
+    "nom": "Morel",
+    "prenom": "Nathan",
+    "email": "nathan.morel207@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "09/01/2025"
+  },
+  {
+    "id_client": "C0123",
+    "nom": "Martinez",
+    "prenom": "Samir",
+    "email": "samir.martinez123@example.org",
+    "adresse": {
+      "ville": "Agde ",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2025-09-12"
+  },
+  {
+    "id_client": "C0240",
+    "nom": "Martin",
+    "prenom": "Chloé",
+    "email": "chloe.martin240@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2025-02-16"
+  },
+  {
+    "id_client": "C0226",
+    "nom": "Vincent",
+    "prenom": "Louis",
+    "email": "louis.vincent226@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2024-07-11"
+  },
+  {
+    "id_client": "C0130",
+    "nom": "Perrin",
+    "prenom": "Camille",
+    "email": "camille.perrin130@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-05-20"
+  },
+  {
+    "id_client": "C0253",
+    "nom": "Nicolas",
+    "prenom": "Manon",
+    "email": "manon.nicolas253@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2024-10-25"
+  },
+  {
+    "id_client": "C0278",
+    "nom": "Girard",
+    "prenom": "Lina",
+    "email": "lina.girard278@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2022-09-30"
+  },
+  {
+    "id_client": "C0012",
+    "nom": "Girard",
+    "prenom": "Alice",
+    "email": "alice.girard12@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2022-10-07"
+  },
+  {
+    "id_client": "C0111",
+    "nom": "Blanc",
+    "prenom": "Jules",
+    "email": "jules.blanc111@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-10-28"
+  },
+  {
+    "id_client": "C0242",
+    "nom": "Durand",
+    "prenom": "Adam",
+    "email": "adam.durand242@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": null
+    },
+    "date_inscription": "2022-11-08"
+  },
+  {
+    "id_client": "C0003",
+    "nom": "Leroy",
+    "prenom": "Camille",
+    "email": "camille.leroy3@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2023-09-16"
+  },
+  {
+    "id_client": "C0131",
+    "nom": "Fournier",
+    "prenom": "Jade",
+    "email": "jade.fournier131@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": 34120
+    },
+    "date_inscription": "2025-10-28"
+  },
+  {
+    "id_client": "C0260",
+    "nom": "Lambert",
+    "prenom": "Antoine",
+    "email": "antoine.lambert260@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2024-06-04"
+  },
+  {
+    "id_client": "C0132",
+    "nom": "Blanc",
+    "prenom": "Jade",
+    "email": "jade.blanc132@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "13/04/2023"
+  },
+  {
+    "id_client": "C0064",
+    "nom": "Dupont",
+    "prenom": "Lina",
+    "email": "lina.dupont64@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2023-04-27"
+  },
+  {
+    "id_client": "C0311",
+    "nom": "FAURE",
+    "prenom": "hugo",
+    "email": "HUGO.FAURE110@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "22/01/2022"
+  },
+  {
+    "id_client": "C0096",
+    "nom": "Dupont",
+    "prenom": "Théo",
+    "email": "theo.dupont96@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-05-14"
+  },
+  {
+    "id_client": "C0303",
+    "nom": "LAMBERT",
+    "prenom": "enzo",
+    "email": "ENZO.LAMBERT47@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2023-05-20"
+  },
+  {
+    "id_client": "C0189",
+    "nom": "Roux",
+    "prenom": "Léa",
+    "email": "lea.roux189@example.org",
+    "adresse": {
+      "ville": "Millau ",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2025-07-03"
+  },
+  {
+    "id_client": "C0250",
+    "nom": "Bernard",
+    "prenom": "Clara",
+    "email": "clara.bernard250@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": 34700
+    },
+    "date_inscription": "2024-12-30"
+  },
+  {
+    "id_client": "C0215",
+    "nom": "Blanc",
+    "prenom": "Inès",
+    "email": "ines.blanc215@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2022-12-18"
+  },
+  {
+    "id_client": "C0172",
+    "nom": "Dubois",
+    "prenom": "Adam",
+    "email": "adam.dubois172@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2023-01-13"
+  },
+  {
+    "id_client": "C0115",
+    "nom": "Muller",
+    "prenom": "Manon",
+    "email": "manon.muller115@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "29/01/2025"
+  },
+  {
+    "id_client": "C0047",
+    "nom": "Lambert",
+    "prenom": "Enzo",
+    "email": "enzo.lambert47@example.org",
+    "adresse": {
+      "ville": "LODÈVE",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2023-05-20"
+  },
+  {
+    "id_client": "C0152",
+    "nom": "Laurent",
+    "prenom": "Lina",
+    "email": "lina.laurent152@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2023-11-03"
+  },
+  {
+    "id_client": "C0044",
+    "nom": "Nicolas",
+    "prenom": "Camille",
+    "email": "camille.nicolas44@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-06-26"
+  },
+  {
+    "id_client": "C0191",
+    "nom": "Dubois",
+    "prenom": "Zoé",
+    "email": "zoe.dubois191@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2022-10-16"
+  },
+  {
+    "id_client": "C0287",
+    "nom": "Henry",
+    "prenom": "Romain",
+    "email": "romain.henry287@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2025-04-12"
+  },
+  {
+    "id_client": "C0279",
+    "nom": "Morel",
+    "prenom": "Sarah",
+    "email": "sarah.morel279@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-10-25"
+  },
+  {
+    "id_client": "C0090",
+    "nom": "Moreau",
+    "prenom": "Clara",
+    "email": "clara.moreau90@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2024-05-28"
+  },
+  {
+    "id_client": "C0147",
+    "nom": "Michel",
+    "prenom": "Clara",
+    "email": "clara.michel147@example.org",
+    "adresse": {
+      "ville": "Agde ",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2025-04-04"
+  },
+  {
+    "id_client": "C0277",
+    "nom": "Lefebvre",
+    "prenom": "Jules",
+    "email": "jules.lefebvre277@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-09-07"
+  },
+  {
+    "id_client": "C0166",
+    "nom": "Dupont",
+    "prenom": "Adam",
+    "email": "adam.dupont166@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-02-17"
+  },
+  {
+    "id_client": "C0055",
+    "nom": "Morel",
+    "prenom": "Samir",
+    "email": "samir.morel55@example.org",
+    "adresse": {
+      "ville": "MONTPELLIER",
+      "code_postal": "34000"
+    },
+    "date_inscription": "09/09/2025"
+  },
+  {
+    "id_client": "C0095",
+    "nom": "Fournier",
+    "prenom": "Hugo",
+    "email": "hugo.fournier95@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2025-09-01"
+  },
+  {
+    "id_client": "C0302",
+    "nom": "PERRIN",
+    "prenom": "elodie",
+    "email": "ELODIE.PERRIN160@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "11/11/2023"
+  },
+  {
+    "id_client": "C0072",
+    "nom": "Martinez",
+    "prenom": "Lucas",
+    "email": "lucas.martinez72@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": 34200
+    },
+    "date_inscription": "2024-01-09"
+  },
+  {
+    "id_client": "C0048",
+    "nom": "Laurent",
+    "prenom": "Léa",
+    "email": null,
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": null
+    },
+    "date_inscription": "2024-09-15"
+  },
+  {
+    "id_client": "C0052",
+    "nom": "Perrin",
+    "prenom": "Nadia",
+    "email": "nadia.perrin52@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "02/01/2024"
+  },
+  {
+    "id_client": "C0281",
+    "nom": "Girard",
+    "prenom": "Inès",
+    "email": "ines.girard281@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2025-05-17"
+  },
+  {
+    "id_client": "C0230",
+    "nom": "François",
+    "prenom": "Nathan",
+    "email": "nathan.francois230@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2023-01-03"
+  },
+  {
+    "id_client": "C0164",
+    "nom": "François",
+    "prenom": "Inès",
+    "email": "ines.francois164@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": null
+    },
+    "date_inscription": "11/05/2025"
+  },
+  {
+    "id_client": "C0308",
+    "nom": "MICHEL",
+    "prenom": "lea",
+    "email": "LEA.MICHEL7@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Montpellier ",
+      "code_postal": "34000"
+    },
+    "date_inscription": "25/09/2024"
+  },
+  {
+    "id_client": "C0107",
+    "nom": "Fournier",
+    "prenom": "Alice",
+    "email": "alice.fournier107@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2023-05-30"
+  },
+  {
+    "id_client": "C0201",
+    "nom": "Bertrand",
+    "prenom": "Camille",
+    "email": "camille.bertrand201@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2022-01-14"
+  },
+  {
+    "id_client": "C0022",
+    "nom": "Garcia",
+    "prenom": "Emma",
+    "email": "emma.garcia22@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2023-10-07"
+  },
+  {
+    "id_client": "C0291",
+    "nom": "Thomas",
+    "prenom": "Élodie",
+    "email": "elodie.thomas291@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "24/11/2024"
+  },
+  {
+    "id_client": "C0042",
+    "nom": "Richard",
+    "prenom": "Clara",
+    "email": "clara.richard42@example.org",
+    "adresse": {
+      "ville": "LODÈVE",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2025-04-03"
+  },
+  {
+    "id_client": "C0114",
+    "nom": "Morel",
+    "prenom": "Jules",
+    "email": "jules.morel114@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2023-06-23"
+  },
+  {
+    "id_client": "C0027",
+    "nom": "Martin",
+    "prenom": "Romain",
+    "email": "romain.martin27@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-09-04"
+  },
+  {
+    "id_client": "C0089",
+    "nom": "Vincent",
+    "prenom": "Maxime",
+    "email": "maxime.vincent89@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2023-11-24"
+  },
+  {
+    "id_client": "C0193",
+    "nom": "Bertrand",
+    "prenom": "Camille",
+    "email": "camille.bertrand193@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2023-07-28"
+  },
+  {
+    "id_client": "C0023",
+    "nom": "Dubois",
+    "prenom": "Jade",
+    "email": "jade.dubois23@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2022-06-06"
+  },
+  {
+    "id_client": "C0223",
+    "nom": "Rousseau",
+    "prenom": "Théo",
+    "email": "theo.rousseau223@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2022-12-24"
+  },
+  {
+    "id_client": "C0134",
+    "nom": "David",
+    "prenom": "Nathan",
+    "email": "nathan.david134@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2023-04-19"
+  },
+  {
+    "id_client": "C0238",
+    "nom": "Faure",
+    "prenom": "Louis",
+    "email": "louis.faure238@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-01-23"
+  },
+  {
+    "id_client": "C0145",
+    "nom": "Martinez",
+    "prenom": "Adam",
+    "email": "adam.martinez145@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "26/05/2023"
+  },
+  {
+    "id_client": "C0077",
+    "nom": "Bonnet",
+    "prenom": "Lucas",
+    "email": "lucas.bonnet77@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2024-09-24"
+  },
+  {
+    "id_client": "C0030",
+    "nom": "Perrin",
+    "prenom": "Romain",
+    "email": "romain.perrin30@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-08-13"
+  },
+  {
+    "id_client": "C0210",
+    "nom": "Dupont",
+    "prenom": "Jade",
+    "email": "jade.dupont210@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2022-03-02"
+  },
+  {
+    "id_client": "C0229",
+    "nom": "Bertrand",
+    "prenom": "Hugo",
+    "email": "hugo.bertrand229@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": 34130
+    },
+    "date_inscription": "2025-04-27"
+  },
+  {
+    "id_client": "C0170",
+    "nom": "François",
+    "prenom": "Chloé",
+    "email": "chloe.francois170@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2022-08-25"
+  },
+  {
+    "id_client": "C0198",
+    "nom": "Morel",
+    "prenom": "Emma",
+    "email": "emma.morel198@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-05-23"
+  },
+  {
+    "id_client": "C0038",
+    "nom": "Bertrand",
+    "prenom": "Alice",
+    "email": "alice.bertrand38@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "07/07/2024"
+  },
+  {
+    "id_client": "C0167",
+    "nom": "Guérin",
+    "prenom": "Paul",
+    "email": "paul.guerin167@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2025-06-12"
+  },
+  {
+    "id_client": "C0239",
+    "nom": "Henry",
+    "prenom": "Élodie",
+    "email": "elodie.henry239@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2023-12-19"
+  },
+  {
+    "id_client": "C0256",
+    "nom": "Roux",
+    "prenom": "Nadia",
+    "email": "nadia.roux256@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": 34200
+    },
+    "date_inscription": "07/07/2022"
+  },
+  {
+    "id_client": "C0001",
+    "nom": "Vincent",
+    "prenom": "Inès",
+    "email": "ines.vincent1@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": null
+    },
+    "date_inscription": "04/09/2024"
+  },
+  {
+    "id_client": "C0175",
+    "nom": "Guérin",
+    "prenom": "Léa",
+    "email": "lea.guerin175@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "05/10/2023"
+  },
+  {
+    "id_client": "C0190",
+    "nom": "Bernard",
+    "prenom": "Léa",
+    "email": "lea.bernard190@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2024-11-01"
+  },
+  {
+    "id_client": "C0006",
+    "nom": "Bertrand",
+    "prenom": "Léa",
+    "email": "lea.bertrand6@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2025-02-28"
+  },
+  {
+    "id_client": "C0108",
+    "nom": "Moreau",
+    "prenom": "Camille",
+    "email": "camille.moreau108@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2024-09-26"
+  },
+  {
+    "id_client": "C0139",
+    "nom": "Guérin",
+    "prenom": "Emma",
+    "email": "emma.guerin139@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2023-05-21"
+  },
+  {
+    "id_client": "C0286",
+    "nom": "Roussel",
+    "prenom": "Enzo",
+    "email": "enzo.roussel286@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-05-11"
+  },
+  {
+    "id_client": "C0020",
+    "nom": "Lambert",
+    "prenom": "Adam",
+    "email": "adam.lambert20@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "25/02/2024"
+  },
+  {
+    "id_client": "C0062",
+    "nom": "Bonnet",
+    "prenom": "Nadia",
+    "email": "nadia.bonnet62@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-09-02"
+  },
+  {
+    "id_client": "C0280",
+    "nom": "Roussel",
+    "prenom": "Hugo",
+    "email": "hugo.roussel280@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2025-08-30"
+  },
+  {
+    "id_client": "C0124",
+    "nom": "Durand",
+    "prenom": "Julie",
+    "email": "julie.durand124@example.org",
+    "adresse": {
+      "ville": "Sète ",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2024-08-09"
+  },
+  {
+    "id_client": "C0188",
+    "nom": "Leroy",
+    "prenom": "Camille",
+    "email": "camille.leroy188@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2022-08-30"
+  },
+  {
+    "id_client": "C0178",
+    "nom": "François",
+    "prenom": "Sarah",
+    "email": "sarah.francois178@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2025-02-25"
+  },
+  {
+    "id_client": "C0155",
+    "nom": "Michel",
+    "prenom": "Alice",
+    "email": "alice.michel155@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2024-03-22"
+  },
+  {
+    "id_client": "C0182",
+    "nom": "Perrin",
+    "prenom": "Mathis",
+    "email": "mathis.perrin182@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-01-25"
+  },
+  {
+    "id_client": "C0073",
+    "nom": "Lefebvre",
+    "prenom": "Mathis",
+    "email": "mathis.lefebvre73@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": 34000
+    },
+    "date_inscription": "08/03/2022"
+  },
+  {
+    "id_client": "C0026",
+    "nom": "Robert",
+    "prenom": "Élodie",
+    "email": "elodie.robert26@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2024-02-13"
+  },
+  {
+    "id_client": "C0093",
+    "nom": "Henry",
+    "prenom": "Clara",
+    "email": "clara.henry93@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2022-02-05"
+  },
+  {
+    "id_client": "C0269",
+    "nom": "Robert",
+    "prenom": "Adam",
+    "email": "adam.robert269@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "26/06/2022"
+  },
+  {
+    "id_client": "C0312",
+    "nom": "DUBOIS",
+    "prenom": "manon",
+    "email": "MANON.DUBOIS213@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2022-07-21"
+  },
+  {
+    "id_client": "C0075",
+    "nom": "Morel",
+    "prenom": "Hugo",
+    "email": "hugo.morel75@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2023-01-18"
+  },
+  {
+    "id_client": "C0018",
+    "nom": "Lefebvre",
+    "prenom": "Emma",
+    "email": "emma.lefebvre18@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2022-11-06"
+  },
+  {
+    "id_client": "C0085",
+    "nom": "Roussel",
+    "prenom": "Lucas",
+    "email": "lucas.roussel85@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "2023-09-30"
+  },
+  {
+    "id_client": "C0273",
+    "nom": "Garcia",
+    "prenom": "Adam",
+    "email": "adam.garcia273@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2023-07-23"
+  },
+  {
+    "id_client": "C0241",
+    "nom": "Nicolas",
+    "prenom": "Anaïs",
+    "email": "anais.nicolas241@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "28/01/2022"
+  },
+  {
+    "id_client": "C0109",
+    "nom": "Simon",
+    "prenom": "Nathan",
+    "email": "nathan.simon109@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "06/05/2023"
+  },
+  {
+    "id_client": "C0218",
+    "nom": "Bertrand",
+    "prenom": "Mathis",
+    "email": "mathis.bertrand218@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "30/03/2024"
+  },
+  {
+    "id_client": "C0128",
+    "nom": "Garnier",
+    "prenom": "Camille",
+    "email": "camille.garnier128@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": 34400
+    },
+    "date_inscription": "18/01/2022"
+  },
+  {
+    "id_client": "C0162",
+    "nom": "Muller",
+    "prenom": "Lucas",
+    "email": "lucas.muller162@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": 30000
+    },
+    "date_inscription": "2024-03-01"
+  },
+  {
+    "id_client": "C0011",
+    "nom": "Girard",
+    "prenom": "Sarah",
+    "email": "sarah.girard11@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2025-08-19"
+  },
+  {
+    "id_client": "C0225",
+    "nom": "Perrin",
+    "prenom": "Jules",
+    "email": "jules.perrin225@example.org",
+    "adresse": {
+      "ville": "Pézenas",
+      "code_postal": "34120"
+    },
+    "date_inscription": "2024-02-18"
+  },
+  {
+    "id_client": "C0306",
+    "nom": "DUPONT",
+    "prenom": "lina",
+    "email": "LINA.DUPONT64@EXAMPLE.ORG",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "27/04/2023"
+  },
+  {
+    "id_client": "C0246",
+    "nom": "Vincent",
+    "prenom": "Hugo",
+    "email": "hugo.vincent246@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2025-01-11"
+  },
+  {
+    "id_client": "C0203",
+    "nom": "Garnier",
+    "prenom": "Chloé",
+    "email": "chloe.garnier203@example.org",
+    "adresse": {
+      "ville": "LUNEL",
+      "code_postal": "34400"
+    },
+    "date_inscription": "10/04/2022"
+  },
+  {
+    "id_client": "C0206",
+    "nom": "Martinez",
+    "prenom": "Lina",
+    "email": "lina.martinez206@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "09/04/2025"
+  },
+  {
+    "id_client": "C0169",
+    "nom": "Simon",
+    "prenom": "Clara",
+    "email": "clara.simon169@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-06-13"
+  },
+  {
+    "id_client": "C0298",
+    "nom": "Guérin",
+    "prenom": "Sarah",
+    "email": "sarah.guerin298@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2025-03-04"
+  },
+  {
+    "id_client": "C0135",
+    "nom": "Rousseau",
+    "prenom": "Enzo",
+    "email": "enzo.rousseau135@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2024-05-26"
+  },
+  {
+    "id_client": "C0196",
+    "nom": "Blanc",
+    "prenom": "Samir",
+    "email": "samir.blanc196@example.org",
+    "adresse": {
+      "ville": "Béziers",
+      "code_postal": "34500"
+    },
+    "date_inscription": "2023-09-25"
+  },
+  {
+    "id_client": "C0261",
+    "nom": "Dubois",
+    "prenom": "Léa",
+    "email": "lea.dubois261@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2025-11-01"
+  },
+  {
+    "id_client": "C0293",
+    "nom": "Garnier",
+    "prenom": "Adam",
+    "email": "adam.garnier293@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2022-09-23"
+  },
+  {
+    "id_client": "C0213",
+    "nom": "Dubois",
+    "prenom": "Manon",
+    "email": "manon.dubois213@example.org",
+    "adresse": {
+      "ville": "Mauguio",
+      "code_postal": "34130"
+    },
+    "date_inscription": "2022-07-21"
+  },
+  {
+    "id_client": "C0034",
+    "nom": "Moreau",
+    "prenom": "Romain",
+    "email": "romain.moreau34@example.org",
+    "adresse": {
+      "ville": "Sète",
+      "code_postal": "34200"
+    },
+    "date_inscription": "02/10/2024"
+  },
+  {
+    "id_client": "C0043",
+    "nom": "Simon",
+    "prenom": "Léa",
+    "email": "lea.simon43@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": 12100
+    },
+    "date_inscription": "20/04/2023"
+  },
+  {
+    "id_client": "C0194",
+    "nom": "Garcia",
+    "prenom": "Jade",
+    "email": "jade.garcia194@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "14/09/2025"
+  },
+  {
+    "id_client": "C0097",
+    "nom": "Laurent",
+    "prenom": "Jade",
+    "email": "jade.laurent97@example.org",
+    "adresse": {
+      "ville": "MILLAU",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2024-12-12"
+  },
+  {
+    "id_client": "C0158",
+    "nom": "Rousseau",
+    "prenom": "Clara",
+    "email": "clara.rousseau158@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2024-05-04"
+  },
+  {
+    "id_client": "C0076",
+    "nom": "Garnier",
+    "prenom": "Lina",
+    "email": "lina.garnier76@example.org",
+    "adresse": {
+      "ville": "Alès",
+      "code_postal": "30100"
+    },
+    "date_inscription": "2023-03-03"
+  },
+  {
+    "id_client": "C0220",
+    "nom": "Roux",
+    "prenom": "Julie",
+    "email": "julie.roux220@example.org",
+    "adresse": {
+      "ville": "Montpellier",
+      "code_postal": "34000"
+    },
+    "date_inscription": "2024-10-31"
+  },
+  {
+    "id_client": "C0233",
+    "nom": "Simon",
+    "prenom": "Nathan",
+    "email": "nathan.simon233@example.org",
+    "adresse": {
+      "ville": "Millau",
+      "code_postal": "12100"
+    },
+    "date_inscription": "2023-01-01"
+  },
+  {
+    "id_client": "C0283",
+    "nom": "Robert",
+    "prenom": "Manon",
+    "email": "manon.robert283@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2022-10-18"
+  },
+  {
+    "id_client": "C0208",
+    "nom": "Perrin",
+    "prenom": "Alice",
+    "email": "alice.perrin208@example.org",
+    "adresse": {
+      "ville": "Agde",
+      "code_postal": "34300"
+    },
+    "date_inscription": "2023-12-30"
+  },
+  {
+    "id_client": "C0119",
+    "nom": "Bernard",
+    "prenom": "Alice",
+    "email": "alice.bernard119@example.org",
+    "adresse": {
+      "ville": "Lunel",
+      "code_postal": "34400"
+    },
+    "date_inscription": "2023-08-17"
+  },
+  {
+    "id_client": "C0126",
+    "nom": "Thomas",
+    "prenom": "Paul",
+    "email": "paul.thomas126@example.org",
+    "adresse": {
+      "ville": "Nîmes",
+      "code_postal": "30000"
+    },
+    "date_inscription": "2023-12-29"
+  },
+  {
+    "id_client": "C0161",
+    "nom": "Nicolas",
+    "prenom": "Alice",
+    "email": "alice.nicolas161@example.org",
+    "adresse": {
+      "ville": "Lodève",
+      "code_postal": "34700"
+    },
+    "date_inscription": "2024-10-31"
+  }
+]
