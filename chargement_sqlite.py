@@ -54,4 +54,13 @@ def charger_sqlite():
         except sqlite.OperationalError as error:
             raise ConnectionError(f"Impossible de se connecter à la base SQLite : {error}")
 
-    return donnees_producteurs,donnees_approvisionnement,donnees_produits
+    return donnees_approvisionnement,donnees_producteurs,donnees_produits
+
+if __name__ == "__main__":
+    donnees_approvisionnement,donnees_producteurs,donnees_produits = charger_sqlite()
+    print("Donnees appro")
+    print(donnees_approvisionnement)
+    print("Donnees producteurs")
+    print(donnees_producteurs)
+    print("Donnees produits")
+    print(donnees_produits)
