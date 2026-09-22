@@ -10,38 +10,51 @@ RACINE = Path("./")
 DOSSIER_SOURCES = Path("./data/sources/")
 CHEMIN_BDD = ""
 
-# Recherche du fichier "source_catalogue.db"
-for chemin in DOSSIER_SOURCES.rglob("source_catalogue.db"):
-    CHEMIN_BDD = chemin
-    try:
-        # Stockage de l'uri de la BDD en incluant le paramètre
-        # garantissant d'accéder aux données en lecture seule
-        uri = f"file:{CHEMIN_BDD}?mode=ro"
+def charger_sqlite():
+    # Recherche du fichier "source_catalogue.db"
+    for chemin in DOSSIER_SOURCES.rglob("source_catalogue.db"):
+        CHEMIN_BDD = chemin
+        try:
+            # Stockage de l'uri de la BDD en incluant le paramètre
+            # garantissant d'accéder aux données en lecture seule
+            uri = f"file:{CHEMIN_BDD}?mode=ro"
 
-        # Connexion à la base de données source_catalogue.db
-        connexion = sqlite.connect(uri, uri=True)
-        print("Connexion à la base de données établie...")
-        # Définition de la requête SQL pouor récupérer les données
-        requetes = {
-            "approvisionnement": "SELECT * FROM `approvisionnement`",
-            "producteurs": "SELECT * from `producteurs`",
-            "produits": "SELECT * from `produits`"
-            }
-        # Déclaration du dictionnaire qui reçoit les résultats
-        resultats = {}
-        print("Les requêtes sont prêtese à être exécutées.")
+            # Connexion à la base de données source_catalogue.db
+            connexion = sqlite.connect(uri, uri=True)
+            print("Connexion à la base de données établie...")
 
-        # On charge les données dans un DataFrame
-        for cle,requete in enumerate(requetes):
-            print(f"{cle} : {requete}")
-            resultats[cle] = pd.read_sql_query(requete, connexion)
+            # Définition de la requête SQL pouor récupérer les données
+            requetes = [
+                { "code":"approvisionnement",
+                "req":"SELECT * FROM `approvisionnement`" },
+                { "code":"producteurs",
+                "req":"SELECT * from `producteurs`" },
+                { "code":"produits",
+                "req":"SELECT * from `produits`" },
+                ]
+            # Déclaration du dictionnaire qui reçoit les résultats
+            resultats = {}
+            print("Les requêtes sont prêtese à être exécutées.")
 
-            print("Requête terminée. Les données de la table 'produits' ont été récupérées.")
+            # On charge les données dans un DataFrame
+            for requete in requetes:
+                print(f"{requete["code"]} : {requete["req"]}")
+                df = pd.read_sql_query(requete["req"], connexion)
+                resultats[requete["code"]] = df
 
-        connexion.close()
+                print(f"Requête terminée. Les données de la table '{requete["code"]}' ont été récupérées.")
 
-        print(df)
+            connexion.close()
+            print("La récupération des données est terminées.")
+            #print(resultats)
+            donnees_approvisionnement = resultats["approvisionnement"]
+            donnees_producteurs = resultats["producteurs"]
+            donnees_produits = resultats["produits"]
 
-    except sqlite.OperationalError as error:
-        raise ConnectionError(f"Impossible de se connecter à la base SQLite : {error}")
+            
+
+        except sqlite.OperationalError as error:
+            raise ConnectionError(f"Impossible de se connecter à la base SQLite : {error}")
+
+    return donnees_producteurs,donnees_approvisionnement,donnees_produits
     
