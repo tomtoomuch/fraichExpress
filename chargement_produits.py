@@ -51,10 +51,7 @@ def charger_sqlite():
             donnees_producteurs = resultats["producteurs"]
             donnees_produits = resultats["produits"]
 
-            
-
         except sqlite.OperationalError as error:
             raise ConnectionError(f"Impossible de se connecter à la base SQLite : {error}")
 
     return donnees_producteurs,donnees_approvisionnement,donnees_produits
-    
