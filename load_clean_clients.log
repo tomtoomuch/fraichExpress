@@ -1,0 +1,7 @@
+2026-09-22 09:31:54,032 - INFO - ===== Début du chargement clients =====
+2026-09-22 09:31:54,033 - INFO - Lecture réussie du fichier data/sources/clients.json : 312 enregistrements lus
+2026-09-22 09:31:54,043 - INFO - Volume lu : 312
+2026-09-22 09:31:54,043 - INFO - Volume accepté : 312
+2026-09-22 09:31:54,043 - INFO - Volume rejeté : 0
+2026-09-22 09:31:54,075 - INFO - Chargement SQLite réussi : table clean_clients (312 lignes)
+2026-09-22 09:31:54,075 - INFO - ===== Fin du chargement clients =====
