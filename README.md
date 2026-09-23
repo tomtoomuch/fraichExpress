@@ -147,5 +147,108 @@ graph TD
 
 > Nous évitons la couche de stockage de données brutes. Nous conservons les fichiers sources d'origine inchangés. Nous pouvons donc les utiliser comme référence le moment voulu.
 
+
+
 ### Dictionnaire de données 'analytique'
 
+#### dim_client
+
+| Colonne          | Type de Donnée | Contrainte  | Description                                    | Type Analytique                                  |
+| :--------------- | :------------- | :---------- | :--------------------------------------------- | :----------------------------------------------- |
+| uid_dim_client   | INTEGER        | PRIMARY KEY | Clé primaire interne du client.                | Clé Surrogate                                    |
+| id_client        | VARCHAR(50)    | UNIQUE      | Identifiant client externe (référence source). | Attribut Source                                  |
+| ville            | VARCHAR(50)    |             | Ville de résidence du client.                  | Attribut Géographique                            |
+| code_postal      | VARCHAR(50)    |             | Code postal de résidence.                      | Attribut Géographique                            |
+| date_inscription | DATE           |             | Date d'inscription du client.                  | Attribut Temporel (Conseil : utiliser type DATE) |
+
+#### dim_temps
+
+| Colonne       | Type de Donnée | Contrainte  | Description                                      | Type Analytique   |
+| :------------ | :------------- | :---------- | :----------------------------------------------- | :---------------- |
+| uid_dim_temps | INTEGER        | PRIMARY KEY | Clé temporelle interne.                          | Clé Surrogate     |
+| id_temps      | INTEGER        | UNIQUE      | Identifiant unique de la date (Jour/Mois/Année). | Attribut Source   |
+| annee         | VARCHAR(50)    |             | Année.                                           | Attribut Temporel |
+| mois          | VARCHAR(50)    |             | Mois.                                            | Attribut Temporel |
+| jour          | VARCHAR(50)    |             | Jour du mois.                                    | Attribut Temporel |
+| saison        | VARCHAR(50)    | CHECK       | Saison de l'année (toute l'année, été ou hiver). | Attribut Temporel |
+
+#### dim_produit
+
+| Colonne | Type de Donnée | Contrainte | Description | Type Analytique |
+| :--- | :--- | :--- | :--- | :--- |
+| uid_dim_produit | INTEGER | PRIMARY KEY | Clé primaire interne du produit. | Clé Surrogate |
+| id_produit | INTEGER | UNIQUE | Identifiant produit externe (référence source). | Attribut Source |
+| libelle | VARCHAR(50) | | Nom commercial du produit. | Attribut |
+| categorie | VARCHAR(50) | CHECK | Catégorie de produit. | Attribut de Classification |
+| unite | VARCHAR(50) | | Unité de mesure (ex: kg, pièce). | Attribut |
+
+#### dim_producteur
+
+| Colonne            | Type de Donnée | Contrainte  | Description                                        | Type Analytique  |
+| :----------------- | :------------- | :---------- | :------------------------------------------------- | :--------------- |
+| uid_dim_producteur | INTEGER        | PRIMARY KEY | Clé primaire interne du producteur.                | Clé Surrogate    |
+| id_producteur      | INTEGER        | UNIQUE      | Identifiant producteur externe (référence source). | Attribut Source  |
+| nom_producteur     | VARCHAR(50)    |             | Nom du producteur.                                 | Attribut         |
+| certifie_bio       | INTEGER        | CHECK       | Statut de certification bio (0 ou 1).              | Attribut Binaire |
+
+#### dim_livraison
+
+| Colonne           | Type de Donnée | Contrainte  | Description                                       | Type Analytique    |
+| :---------------- | :------------- | :---------- | :------------------------------------------------ | :----------------- |
+| uid_dim_livraison | INTEGER        | PRIMARY KEY | Clé primaire interne de l'opération de livraison. | Clé Surrogate      |
+| id_livraison      | INTEGER        | UNIQUE      | Identifiant unique externe de la livraison.       | Attribut Source    |
+| mode_livraison    | VARCHAR(30)    |             | Méthode de livraison utilisée.                    | Attribut de Filtre |
+
+#### dim_meteo
+
+| Colonne | Type de Donnée | Contrainte | Description | Type Analytique |
+| :--- | :--- | :--- | :--- | :--- |
+| uid_dim_meteo | INTEGER | PRIMARY KEY | Clé primaire interne de l'observation. | Clé Surrogate |
+| id_meteo | INTEGER | UNIQUE | Identifiant unique de l'observation météo. | Attribut Source |
+| ville | VARCHAR(50) | | Ville de l'observation. | Attribut Géographique |
+| temp_max | REAL | | Température maximale observée. | Mesure Contextuelle |
+| pluie_mm | DECIMAL(15,2) | | Quantité de pluie enregistrée. | Mesure Contextuelle |
+
+#### dim_commande
+
+| Colonne | Type de Donnée | Contrainte | Description | Type Analytique |
+| :--- | :--- | :--- | :--- | :--- |
+| uid_dim_commande | INTEGER | PRIMARY KEY | Clé primaire interne de la commande. | Clé Surrogate |
+| id_commande | VARCHAR(30) | UNIQUE | Identifiant unique externe de la commande. | Attribut Source |
+| statut | VARCHAR(30) | CHECK | Statut final de la commande. | Attribut de Filtre |
+| mode_livraison | VARCHAR(30) | CHECK | Mode de livraison principal. | Attribut de Filtre |
+
+#### faits_annulations
+
+| Colonne             | Type de Donnée | Contrainte  | Description                                         | Type Analytique      |
+| :------------------ | :------------- | :---------- | :-------------------------------------------------- | :------------------- |
+| uid_fait_annulation | INTEGER        | PRIMARY KEY | Clé unique de l'événement d'annulation.             | Clé Surrogate        |
+| id_fait_annulation  | INTEGER        | UNIQUE      | Identifiant transactionnel externe de l'annulation. | Attribut Source      |
+| date_annulation     | DATE           |             | Date à laquelle l'annulation a été enregistrée.     | Attribut Temporel    |
+| motif_annulation    | VARCHAR(50)    | NOT NULL    | Raison de l'annulation.                             | Attribut de Filtre   |
+| montant_annulation  | REAL           | NOT NULL    | Montant total de l'annulation (Mesure).             | **Mesure (KPI)**     |
+| quantite_annulee    | REAL           | NOT NULL    | Quantité annulée (Mesure).                          | **Mesure (KPI)**     |
+| uid_dim_commande    | INTEGER        | FOREIGN KEY | Commande concernée.                                 | FK (dim\_commande)   |
+| uid_dim_client      | INTEGER        | FOREIGN KEY | Client impacté.                                     | FK (dim\_client)     |
+| uid_dim_meteo       | INTEGER        | FOREIGN KEY | Météo associée à l'annulation.                      | FK (dim\_meteo)      |
+| uid_dim_producteur  | INTEGER        | FOREIGN KEY | Producteur concerné.                                | FK (dim\_producteur) |
+| uid_dim_temps       | INTEGER        | FOREIGN KEY | Date de l'annulation.                               | FK (dim\_date)       |
+| uid_dim_produit     | INTEGER        | FOREIGN KEY | Produit concerné.                                   | FK (dim\_produit)    |
+| uid_dim_livraison   | INTEGER        | FOREIGN KEY | Livraison associée à l'annulation.                  | FK (dim\_livraison)  |
+
+#### faits_ventes
+
+| Colonne            | Type de Donnée | Contrainte  | Description                                            | Type Analytique      |
+| :----------------- | :------------- | :---------- | :----------------------------------------------------- | :------------------- |
+| uid_fait_vente     | INTEGER        | PRIMARY KEY | Clé unique de l'événement de vente.                    | Clé Surrogate        |
+| id_fait_vente      | INTEGER        | UNIQUE      | Identifiant transactionnel externe de la vente.        | Attribut Source      |
+| quantite           | REAL           | NOT NULL    | Quantité vendue.                                       | **Mesure (KPI)**     |
+| prix_unitaire      | REAL           | NOT NULL    | Prix unitaire facturé.                                 | **Mesure (KPI)**     |
+| montant_vente      | REAL           | NOT NULL    | Montant total de la vente (Mesure = Quantité \* Prix). | **Mesure (KPI)**     |
+| uid_dim_meteo      | INTEGER        | FOREIGN KEY | Météo associée à la vente.                             | FK (dim\_meteo)      |
+| uid_dim_commande   | INTEGER        | FOREIGN KEY | Commande parente de la vente.                          | FK (dim\_commande)   |
+| uid_dim_producteur | INTEGER        | FOREIGN KEY | Producteur lié au produit vendu.                       | FK (dim\_producteur) |
+| uid_dim_produit    | INTEGER        | FOREIGN KEY | Produit vendu.                                         | FK (dim\_produit)    |
+| uid_dim_temps      | INTEGER        | FOREIGN KEY | Date de la vente.                                      | FK (dim\_date)       |
+| uid_dim_client     | INTEGER        | FOREIGN KEY | Client effectuant l'achat.                             | FK (dim\_client)     |
+| uid_dim_livraison  | INTEGER        | FOREIGN KEY | Livraison associée à la vente.                         | FK (dim\_livraison)  |

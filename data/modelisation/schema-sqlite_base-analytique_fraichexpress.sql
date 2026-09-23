@@ -27,7 +27,7 @@ CREATE TABLE dim_produit(
 
 CREATE TABLE dim_producteur(
     uid_dim_producteur INTEGER PRIMARY KEY,
-    id_producteur VARCHAR(50) NOT NULL UNIQUE,
+    id_producteur INTEGER NOT NULL UNIQUE,
     nom_producteur VARCHAR(50),
     certifie_bio INTEGER NOT NULL
         CHECK (certification_bio IN (0,1))
@@ -36,9 +36,7 @@ CREATE TABLE dim_producteur(
 CREATE TABLE dim_livraison(
     uid_dim_livraison INTEGER PRIMARY KEY,
     id_livraison INTEGER NOT NULL UNIQUE,
-    mode_livraison VARCHAR(30) NOT NULL,
-    PRIMARY KEY(uid_dim_livraison),
-    UNIQUE(id_livraison)
+    mode_livraison VARCHAR(30) NOT NULL    
 );
 
 CREATE TABLE dim_meteo(
@@ -86,7 +84,7 @@ CREATE TABLE faits_annulations(
         REFERENCES dim_producteur(uid_dim_producteur),
     
     FOREIGN KEY(uid_dim_temps)
-        REFERENCES dim_date(uid_dim_temps),
+        REFERENCES dim_temps(uid_dim_temps),
     
     FOREIGN KEY(uid_dim_produit)
         REFERENCES dim_producteur(uid_dim_produit),
@@ -122,7 +120,7 @@ CREATE TABLE faits_ventes(
         REFERENCES dim_produit(uid_dim_produit),
 
     FOREIGN KEY(uid_dim_temps)
-        REFERENCES dim_date(uid_dim_temps),
+        REFERENCES dim_temps(uid_dim_temps),
 
     FOREIGN KEY(uid_dim_client)
         REFERENCES dim_client(uid_dim_client),
