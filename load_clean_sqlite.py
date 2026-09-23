@@ -6,7 +6,7 @@ from pathlib import Path
 import pandas as pd
 import sqlite3 as sqlite
 import logging
-from tabulate import tabulate
+from datetime import datetime
 
 # Déclaration des variables globales
 RACINE = Path("./")
@@ -16,9 +16,12 @@ CHEMIN_BDD_SOURCE = ""
 CHEMIN_BDD_DEST = ""
 LOG_FILE = "load_sqlite_data.log"
 
+# Génération d'un horodatage pour le nom du fichier de journalisation
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
 # Initialisation de la journalisation
 logging.basicConfig(
-    filename=LOG_FILE,
+    filename=f"{timestamp}_{LOG_FILE}",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     encoding="utf-8"
