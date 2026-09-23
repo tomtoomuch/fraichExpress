@@ -167,7 +167,6 @@ try:
         "mode_livraison",
         "motif_annulation"
         ]
-
         avant = len(df)
 
         df = df.drop_duplicates(
