@@ -1,4 +1,4 @@
-CREATE TABLE clients(
+CREATE TABLE clean_clients(
    uid_client INTEGER PRIMARY KEY,
    id_client VARCHAR(30) NOT NULL UNIQUE,
    nom VARCHAR(50) NOT NULL,
@@ -9,18 +9,19 @@ CREATE TABLE clients(
    code_postal VARCHAR(10) NOT NULL
 );
 
-CREATE TABLE produits(
+CREATE TABLE clean_produits(
    uid_produit INTEGER PRIMARY KEY,
    id_produit INTEGER NOT NULL UNIQUE,
    libelle VARCHAR(50) NOT NULL,
-   categorie VARCHAR(50) NOT NULL,
+   categorie VARCHAR(50) NOT NULL
+      CHECK,
    unite VARCHAR(10) NOT NULL,
    prix_unitaire REAL NOT NULL,
    saison VARCHAR(30) NOT NULL
       CHECK (saison IN ("toute_annee","ete","hiver"))
 );
 
-CREATE TABLE producteurs(
+CREATE TABLE clean_producteurs(
    uid_producteur INTEGER PRIMARY KEY,
    id_producteur INTEGER NOT NULL UNIQUE,
    nom VARCHAR(30) NOT NULL,
@@ -30,7 +31,7 @@ CREATE TABLE producteurs(
    date_adhesion DATE NOT NULL
 );
 
-CREATE TABLE commandes(
+CREATE TABLE clean_commandes(
    uid_commande INTEGER PRIMARY KEY,
    id_commande VARCHAR(10) NOT NULL UNIQUE,
    date_commande DATE NOT NULL
@@ -45,7 +46,7 @@ CREATE TABLE commandes(
       REFERENCES clients(id_client)
 );
 
-CREATE TABLE annulations(
+CREATE TABLE clean_annulations(
    uid_annulation INTEGER PRIMARY KEY,
    id_annulation INTEGER NOT NULL,
    motif_annulation VARCHAR(50),
@@ -58,7 +59,7 @@ CREATE TABLE annulations(
       REFERENCES commandes(id_commande)
 );
 
-CREATE TABLE lignes_commande(
+CREATE TABLE clean_lignes_commande(
    uid_ligne_commande INTEGER PRIMARY KEY,
    id_produit INTEGER NOT NULL,
    id_commande VARCHAR(10) NOT NULL,
@@ -74,7 +75,7 @@ CREATE TABLE lignes_commande(
       REFERENCES commandes(id_commande)
 );
 
-CREATE TABLE livraisons(
+CREATE TABLE clean_livraisons(
    uid_livraison INTEGER PRIMARY KEY,
    id_produit INTEGER NOT NULL,
    id_producteur INTEGER NOT NULL,
