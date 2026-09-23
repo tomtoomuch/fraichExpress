@@ -54,6 +54,13 @@ graph TD
 
 * 1 produit peut être fourni par 1 ou plusieurss producteurs en fonction de la saison
 
-* 1 commande enregistre 1 ligne par client, par produit, par commande
+* 1 commande enregistre 1 ligne par client, par produit
 
-* 1 commande ne peut exister que si le client existe dans clean_clients
+* 1 commande ne peut exister que si le client existe dans clean_clients - CONTRAINTE
+
+* la disponibilité des produits est conditionnée par les producteurs et la saisonnalité.
+
+
+## Dictionnaire de données
+
+Stockage de vérité - base métier
