@@ -60,7 +60,7 @@ graph TD
 
 ## Modélisations des données
 
-### Dictionnaires de données 'métiers'
+### Dictionnaire de données 'métiers'
 
 > Se préoccuper des surrogate_key à l'insertion des données
 
@@ -142,4 +142,10 @@ graph TD
 | id_producteur | INTEGER | FOREIGN KEY (producteurs.id_producteur) | Le producteur associé au produit livré. |
 | date_livraison | DATE | NOT NULL | Date effective de la livraison. |
 | quantite_livree | REAL | NOT NULL | Quantité livrée avec succès. |
+
+### Dictionnaire de données 'datalake'
+
+> Nous évitons la couche de stockage de données brutes. Nous conservons les fichiers sources d'origine inchangés. Nous pouvons donc les utiliser comme référence le moment voulu.
+
+### Dictionnaire de données 'analytique'
 

@@ -1,14 +1,14 @@
 CREATE TABLE dim_client(
-    uid_dim_client INTEGEREGER PRIMARY KEY,
+    uid_dim_client INTEGER PRIMARY KEY,
     id_client VARCHAR(50) NOT NULL UNIQUE,
     ville VARCHAR(50),
     code_postal VARCHAR(50),
     date_inscription VARCHAR(50)
 );
 
-CREATE TABLE dim_date(
+CREATE TABLE dim_temps(
     uid_dim_temps INTEGER PRIMARY KEY,
-    id_date INTEGER NOT NULL UNIQUE,
+    id_temps INTEGER NOT NULL UNIQUE,
     annee VARCHAR(50),
     mois VARCHAR(50),
     jour VARCHAR(50),
