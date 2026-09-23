@@ -1,0 +1,8 @@
+2026-09-22 11:26:56,744 - INFO - ===== Début du chargement meteo.csv =====
+2026-09-22 11:26:56,763 - INFO - Lecture réussie du fichier data/sources/meteo.csv : 4015 enregistrements lus
+2026-09-22 11:26:56,771 - INFO - Volume lu : 4015
+2026-09-22 11:26:56,771 - INFO - Volume accepté : 4015
+2026-09-22 11:26:56,771 - INFO - Volume rejeté : 0
+2026-09-22 11:26:56,771 - INFO - Doublons : 0
+2026-09-22 11:26:56,793 - INFO - Chargement SQLite réussi : table clean_meteo (4015 lignes)
+2026-09-22 11:26:56,793 - INFO - ===== Fin du chargement clean_meteo =====
