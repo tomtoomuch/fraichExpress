@@ -167,7 +167,6 @@ try:
         "mode_livraison",
         "motif_annulation"
         ]
-
         avant = len(df)
 
         df = df.drop_duplicates(
@@ -259,8 +258,7 @@ try:
 except Exception as e:
 
     logger.exception(
-        "Erreur lors du chargement des commandes 2025 : %s",
-        e
+        "Erreur lors du chargement des commandes 2025 : %s",e
     )
 
     print(
