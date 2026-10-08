@@ -179,7 +179,7 @@ def charger_sqlite():
     return donnees_approvisionnement,donnees_producteurs,donnees_produits
 
 
-def stocker_sqlite(
+""" def stocker_sqlite(
     donnees_approvisionnement,
     donnees_producteurs,
     donnees_produits
@@ -242,9 +242,9 @@ def stocker_sqlite(
             )
             raise RuntimeError(
                 f"Impossible de se connecter à la base SQLite : '{CHEMIN_BDD_SOURCE}'"
-                ) from error
+                ) from error """
 
 ## POINT D'ENTREE SI EXECUTE EN CLI DEPUIS LE TERMINAL
 if __name__ == "__main__":
     donnees_approvisionnement, donnees_producteurs, donnees_produits = charger_sqlite()
-    stocker_sqlite(donnees_approvisionnement, donnees_producteurs, donnees_produits)
+    #stocker_sqlite(donnees_approvisionnement, donnees_producteurs, donnees_produits)
