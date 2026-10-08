@@ -3,7 +3,8 @@ import pandas as pd
 import sqlite3
 import logging
 from pathlib import Path
-from load_data_source_catalogue import charger_sqlite
+from datetime import datetime
+from load_clean_sqlite import charger_sqlite
 
 # -------------------------------------------------------------------------------
 # Configuration
@@ -13,12 +14,15 @@ DATABASE_FILE = "data/fraichexpress.db"
 LOG_FILE = "load_clean_produits.log"
 
 
+# Génération d'un horodatage pour le nom du fichier de journalisation
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+
 # -------------------------------------------------------------------------------
 # Configuration du logging
 # -------------------------------------------------------------------------------
 
 logging.basicConfig(
-    filename=LOG_FILE,
+    filename=f"{timestamp}_{LOG_FILE}",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     encoding="utf-8",
@@ -116,7 +120,7 @@ def normaliser_categorie(categorie):
 
 def load_data():
     try:
-        donnees_approvisionnement, donnees_producteurs, donnees_produits = (
+        _, _, donnees_produits = (
             charger_sqlite()
         )
 
@@ -128,7 +132,7 @@ def load_data():
 
     except FileNotFoundError:
         logger.error(
-            "Erreur sur la récuperation des données produits sur la base source_catalogue.db"
+            "Erreur lors de la récuperation des données produits sur la base source_catalogue.db"
         )
         raise
 
@@ -136,86 +140,86 @@ def load_data():
 # -------------------------------------------------------------------------------
 # Programme principal
 # -------------------------------------------------------------------------------
+if __name__ == "__main__":
+    try:
 
-try:
+        logger.info("===== Début du chargement des produits =====")
 
-    logger.info("===== Début du chargement des produits =====")
+        # Lecture des données
+        df = load_data()
 
-    # Lecture des données
-    df = load_data()
+        nombre_lus = len(df)
 
-    nombre_lus = len(df)
+        print("Nombre de lignes lues :", nombre_lus)
 
-    print("Nombre de lignes lues :", nombre_lus)
+        # ---------------------------------------------------------------------------
+        # Normalisation des libelle produit
+        # ---------------------------------------------------------------------------
 
-    # ---------------------------------------------------------------------------
-    # Normalisation des libelle produit
-    # ---------------------------------------------------------------------------
+        if "libelle" in df.columns:
 
-    if "libelle" in df.columns:
+            df["libelle"] = df["libelle"].apply(normaliser_produit)
 
-        df["libelle"] = df["libelle"].apply(normaliser_produit)
+        # ---------------------------------------------------------------------------
+        # Normalisation des categories produit
+        # ---------------------------------------------------------------------------
 
-    # ---------------------------------------------------------------------------
-    # Normalisation des categories produit
-    # ---------------------------------------------------------------------------
+        if "categorie" in df.columns:
 
-    if "categorie" in df.columns:
+            df["categorie"] = df["categorie"].astype("string").str.strip()
+            df["categorie"] = df["categorie"].apply(normaliser_categorie)
 
-        df["categorie"] = df["categorie"].astype("string").str.strip()
-        df["categorie"] = df["categorie"].apply(normaliser_categorie)
+        # ---------------------------------------------------------------------------
+        # Vérification des données
+        # ---------------------------------------------------------------------------
 
-    # ---------------------------------------------------------------------------
-    # Vérification des données
-    # ---------------------------------------------------------------------------
+        nombre_rejetes = 0
 
-    nombre_rejetes = 0
+        if "libelle" in df.columns:
 
-    if "libelle" in df.columns:
+            nombre_rejetes = df["libelle"].isna().sum()
 
-        nombre_rejetes = df["libelle"].isna().sum()
+            if nombre_rejetes > 0:
 
-        if nombre_rejetes > 0:
+                logger.warning("%d libelle(s) invalide(s)", nombre_rejetes)
 
-            logger.warning("%d libelle(s) invalide(s)", nombre_rejetes)
+        nombre_acceptes = nombre_lus - nombre_rejetes
 
-    nombre_acceptes = nombre_lus - nombre_rejetes
+        logger.info("Volume lu : %d", nombre_lus)
 
-    logger.info("Volume lu : %d", nombre_lus)
+        logger.info("Volume accepté : %d", nombre_acceptes)
 
-    logger.info("Volume accepté : %d", nombre_acceptes)
+        logger.info("Volume rejeté : %d", nombre_rejetes)
 
-    logger.info("Volume rejeté : %d", nombre_rejetes)
+        # ---------------------------------------------------------------------------
+        # Connexion à SQLite
+        # ---------------------------------------------------------------------------
 
-    # ---------------------------------------------------------------------------
-    # Connexion à SQLite
-    # ---------------------------------------------------------------------------
+        conn = sqlite3.connect(DATABASE_FILE)
 
-    conn = sqlite3.connect(DATABASE_FILE)
+        # ---------------------------------------------------------------------------
+        # Chargement dans SQLite
+        # ---------------------------------------------------------------------------
 
-    # ---------------------------------------------------------------------------
-    # Chargement dans SQLite
-    # ---------------------------------------------------------------------------
+        df.to_sql("clean_produits", conn, if_exists="replace", index=False)
 
-    df.to_sql("clean_produits", conn, if_exists="replace", index=False)
+        conn.close()
 
-    conn.close()
+        logger.info("Chargement SQLite réussi : table clean_produits (%d lignes)", len(df))
 
-    logger.info("Chargement SQLite réussi : table clean_produits (%d lignes)", len(df))
+        logger.info("===== Fin du chargement clean_produits =====")
 
-    logger.info("===== Fin du chargement clean_produits =====")
+        print(f"Données enregistrées dans {DATABASE_FILE}")
 
-    print(f"Données enregistrées dans {DATABASE_FILE}")
-
-    print(
-        f"Lues : {nombre_lus} | "
-        f"Acceptées : {nombre_acceptes} | "
-        f"Rejetées : {nombre_rejetes}"
-    )
+        print(
+            f"Lues : {nombre_lus} | "
+            f"Acceptées : {nombre_acceptes} | "
+            f"Rejetées : {nombre_rejetes}"
+        )
 
 
-except Exception as e:
+    except Exception as e:
 
-    logger.exception("Erreur lors du chargement des clients : %s", e)
+        logger.exception("Erreur lors du chargement des produits : %s", e)
 
-    print("Une erreur est survenue. Consultez le fichier de log :", LOG_FILE)
+        print("Une erreur est survenue. Consultez le fichier de log :", LOG_FILE)
