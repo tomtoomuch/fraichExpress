@@ -2,9 +2,7 @@
 
 ## Cahier des charges proposé par la directrice de Fraich'Express
 
-```txt
 FraîchExpress vend des produits issus de producteurs partenaires. Un client passe des commandes, chaque commande contenant un ou plusieurs produits en certaines quantités. Les prix évoluent au cours de l'année : ce que paie le client doit rester celui du jour de la commande. Une commande est livrée à domicile, dans un point relais, ou retirée à la ferme. Certains produits peuvent provenir de plusieurs producteurs selon la saison. Nous voulons connaître, pour chaque commande, si elle a été livrée ou annulée, et pourquoi.
-```
 
 ```mermaid
 ---
@@ -68,7 +66,7 @@ graph TD
 
 | Nom de la colonne | Type de donnée |   Contraintes    |              Description              |
 | :---------------: | :------------: | :--------------: | :-----------------------------------: |
-|    uid_client     | INTEGER<br>AI  |   PRIMARY KEY    | Identifiant interne unique du client. |
+|    uid_client     | INTEGER        |   PRIMARY KEY    | Identifiant interne unique du client. |
 |     id_client     |  VARCHAR(30)   | NOT NULL, UNIQUE |    Identifiant externe du client.     |
 |        nom        |  VARCHAR(50)   |     NOT NULL     |       Nom de famille du client.       |
 |      prenom       |  VARCHAR(30)   |     NOT NULL     |           Prénom du client.           |
@@ -81,7 +79,7 @@ graph TD
 
 | Nom de la colonne | Type de donnée |   Contraintes    |                      Description                       |
 | :---------------: | :------------: | :--------------: | :----------------------------------------------------: |
-|    uid_produit    |   INTEGER AI   |   PRIMARY KEY    |         Identifiant interne unique du produit.         |
+|    uid_produit    |   INTEGER      |   PRIMARY KEY    |         Identifiant interne unique du produit.         |
 |    id_produit     |    INTEGER     | NOT NULL, UNIQUE |         Identifiant externe unique du produit.         |
 |      libelle      |  VARCHAR(50)   |     NOT NULL     |             Nom ou description du produit.             |
 |     categorie     |  VARCHAR(50)   |     NOT NULL     |      Catégorie de produit (ex : Fruits, Légumes).      |
@@ -93,7 +91,7 @@ graph TD
 
 | Nom de la colonne | Type de donnée | Contraintes           | Description                               |
 | :---------------- | :------------- | :-------------------- | :---------------------------------------- |
-| uid_producteur    | INTEGER<br>AI  | PRIMARY KEY           | Identifiant interne unique du producteur. |
+| uid_producteur    | INTEGER        | PRIMARY KEY           | Identifiant interne unique du producteur. |
 | id_producteur     | INTEGER        | NOT NULL, UNIQUE      | Identifiant externe unique du producteur. |
 | nom               | VARCHAR(30)    | NOT NULL              | Nom du producteur.                        |
 | commune           | VARCHAR(30)    | NOT NULL              | Commune/Municipalité du producteur.       |
@@ -104,7 +102,7 @@ graph TD
 
 | Nom de la colonne | Type de donnée | Contraintes                     | Description                                                   |
 | :---------------- | :------------- | :------------------------------ | :------------------------------------------------------------ |
-| uid_commande      | INTEGER<br>AI  | PRIMARY KEY                     | Identifiant interne unique de la commande.                    |
+| uid_commande      | INTEGER        | PRIMARY KEY                     | Identifiant interne unique de la commande.                    |
 | id_commande       | VARCHAR(10)    | NOT NULL, UNIQUE                | Identifiant externe unique de la commande.                    |
 | date_commande     | DATE           | NOT NULL                        | Date de passation de la commande.                             |
 | statut            | VARCHAR(30)    | NOT NULL                        | Statut actuel de la commande (Livrée, Annulée).               |
@@ -115,7 +113,7 @@ graph TD
 
 | Nom de la colonne  | Type de donnée | Contraintes                         | Description                                                |
 | :----------------- | :------------- | :---------------------------------- | :--------------------------------------------------------- |
-| uid_annulation     | INTEGER<br>AI  | PRIMARY KEY                         | Identifiant interne unique de l'annulation.                |
+| uid_annulation     | INTEGER        | PRIMARY KEY                         | Identifiant interne unique de l'annulation.                |
 | id_annulation      | INTEGER        | NOT NULL                            | Identifiant externe de l'annulation.                       |
 | motif_annulation   | VARCHAR(50)    | NULL                                | Motif de l'annulation.                                     |
 | date_annulation    | DATE           | NOT NULL                            | Date de l'annulation.                                      |
@@ -146,8 +144,6 @@ graph TD
 ### Dictionnaire de données 'datalake'
 
 > Nous évitons la couche de stockage de données brutes. Nous conservons les fichiers sources d'origine inchangés. Nous pouvons donc les utiliser comme référence le moment voulu.
-
-
 
 ### Dictionnaire de données 'analytique'
 
