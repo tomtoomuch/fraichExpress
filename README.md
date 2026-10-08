@@ -248,3 +248,14 @@ graph TD
 | uid_dim_temps      | INTEGER        | FOREIGN KEY | Date de la vente.                                      | FK (dim\_date)       |
 | uid_dim_client     | INTEGER        | FOREIGN KEY | Client effectuant l'achat.                             | FK (dim\_client)     |
 | uid_dim_livraison  | INTEGER        | FOREIGN KEY | Livraison associée à la vente.                         | FK (dim\_livraison)  |
+
+## Exécution pipeline ETL
+
+> Les données sont extraites, transformées puis écrites dans le fichier fraichexpress.db
+
+1. **load_clean_client.py**
+    Récupère les données du fichier clients.json,
+    les nettoie et les normalise
+    puis les charge dans la base SQL fraichexpress.db
+
+2. **
