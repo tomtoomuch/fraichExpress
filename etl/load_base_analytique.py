@@ -24,6 +24,7 @@ from chemins import *
 # -------------------------------------------------------------------------------
 
 DATABASE_FILE = DATA_DIR / "fraichexpress.db"
+ANALYTICAL_DATABASE_FILE = DATA_DIR / "fraichexpress_analytique.db"
 LOG_FILE = "load_base_analytique.log"
 
 # Génération d'un horodatage pour le nom du fichier de journalisation
@@ -529,9 +530,14 @@ def main():
             "clean_meteo"
         )
 
+        conn.close()
         # ---------------------------------------------------------------------------
         # Création des dimensions
         # ---------------------------------------------------------------------------
+        conn_analytic = sqlite3.connect(
+                    ANALYTICAL_DATABASE_FILE
+                )
+
 
         dim_client = creer_dim_client(
             df_clients
@@ -585,49 +591,49 @@ def main():
 
         dim_client.to_sql(
             "DIM_CLIENT",
-            conn,
+            conn_analytic,
             if_exists="replace",
             index=False
         )
 
         dim_date.to_sql(
             "DIM_DATE",
-            conn,
+            conn_analytic,
             if_exists="replace",
             index=False
         )
 
         dim_produit.to_sql(
             "DIM_PRODUIT",
-            conn,
+            conn_analytic,
             if_exists="replace",
             index=False
         )
 
         dim_producteur.to_sql(
             "DIM_PRODUCTEUR",
-            conn,
+            conn_analytic,
             if_exists="replace",
             index=False
         )
 
         dim_livraison.to_sql(
             "DIM_LIVRAISON",
-            conn,
+            conn_analytic,
             if_exists="replace",
             index=False
         )
 
         dim_meteo.to_sql(
             "DIM_METEO",
-            conn,
+            conn_analytic,
             if_exists="replace",
             index=False
         )
 
         fait_ventes.to_sql(
             "FAIT_VENTES",
-            conn,
+            conn_analytic,
             if_exists="replace",
             index=False
         )
@@ -636,7 +642,7 @@ def main():
         # Fermeture
         # ---------------------------------------------------------------------------
 
-        conn.close()
+        conn_analytic.close()
 
         logger.info(
             "===== Fin ETL base analytique ====="

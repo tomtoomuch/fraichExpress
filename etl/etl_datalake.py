@@ -3,6 +3,28 @@ import pandas as pd
 import numpy as np
 from chemins import *
 import json
+import logging
+from datetime import datetime
+
+LOG_FILE = "load_datalake.log"
+
+# Génération d'un horodatage pour le nom du fichier de journalisation
+timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+LOG_FILE = LOGS_DIR / f"{timestamp}_{LOG_FILE}"
+
+# -------------------------------------------------------------------------------
+# Configuration du logging
+# -------------------------------------------------------------------------------
+
+logging.basicConfig(
+    filename=f"{LOG_FILE}",
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s",
+    encoding="utf-8"
+)
+
+logger = logging.getLogger(__name__)
+
 
 def main():
 # ==========================================
@@ -18,8 +40,8 @@ def main():
     # Création des tables de Dimension et de Faits avec Clés Surrogate séquentielles
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS dim_client (
-        client_sk INTEGER PRIMARY KEY AUTOINCREMENT,
-        id_client TEXT NOT NULL UNIQUE,
+        client_sk INTEGER PRIMARY KEY,
+        id_client TEXT NOT NULL,
         nom TEXT,
         prenom TEXT,
         email TEXT,
@@ -31,7 +53,7 @@ def main():
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS dim_produit (
-        produit_sk INTEGER PRIMARY KEY AUTOINCREMENT,
+        produit_sk INTEGER PRIMARY KEY,
         id_produit INTEGER NOT NULL UNIQUE,
         libelle TEXT,
         categorie TEXT,
@@ -45,7 +67,7 @@ def main():
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS dim_meteo (
-        meteo_sk INTEGER PRIMARY KEY AUTOINCREMENT,
+        meteo_sk INTEGER PRIMARY KEY,
         date_meteo DATE NOT NULL,
         ville TEXT NOT NULL,
         temp_max REAL,
@@ -56,60 +78,66 @@ def main():
 
     cursor.execute("""
     CREATE TABLE IF NOT EXISTS fait_commande (
-        commande_sk INTEGER PRIMARY KEY AUTOINCREMENT,
+        commande_sk INTEGER PRIMARY KEY,
         id_commande TEXT NOT NULL,
         client_sk INTEGER NOT NULL,
         produit_sk INTEGER NOT NULL,
-        meteo_sk INTEGER,
+        meteo_sk INTEGER NOT NULL,
         date_commande DATE,
         quantite REAL,
         prix_unitaire_applique REAL,
         statut TEXT,
         mode_livraison TEXT,
         motif_annulation TEXT,
-        FOREIGN KEY (client_sk) REFERENCES dim_client(client_sk),
-        FOREIGN KEY (produit_sk) REFERENCES dim_produit(produit_sk),
-        FOREIGN KEY (meteo_sk) REFERENCES dim_meteo(meteo_sk)
+        
+        FOREIGN KEY (client_sk)
+            REFERENCES dim_client(client_sk),
+
+        FOREIGN KEY (produit_sk)
+            REFERENCES dim_produit(produit_sk),
+
+        FOREIGN KEY (meteo_sk)
+            REFERENCES dim_meteo(meteo_sk)
     );
     """)
     conn_cible.commit()
-    print("✔ Base de données cible et schéma en étoile initialisés.")
+    logger.info("✔ Base de données cible et schéma en étoile initialisés.")
 
 
     # ==========================================
     # 2. EXTRACTION (E)
     # ==========================================
-    print("\n--- 🚀 PHASE DE L'EXTRACTION ---")
+    logger.info("\n--- 🚀 PHASE DE L'EXTRACTION ---")
 
     # Source 1: Fichier JSON des clients
     df_clients_raw = pd.read_json(SOURCES_DIR / "clients.json")
 
-    print(f"Source 1 (JSON Clients) : {len(df_clients_raw)} lignes extraites.")
+    logger.info(f"Source 1 (JSON Clients) : {len(df_clients_raw)} lignes extraites.")
 
     # Source 2: Fichier CSV des commandes (délimiteur ';')
     df_commandes_raw = pd.read_csv(SOURCES_DIR / "commandes_2025.csv", sep=";", encoding="latin-1")
 
-    print(f"Source 2 (CSV Commandes) : {len(df_commandes_raw)} lignes extraites.")
+    logger.info(f"Source 2 (CSV Commandes) : {len(df_commandes_raw)} lignes extraites.")
 
     # Source 3: Fichier CSV de la météo (délimiteur ';')
     df_meteo_raw = pd.read_csv(SOURCES_DIR / "meteo.csv", sep=";")
 
-    print(f"Source 3 (CSV Météo) : {len(df_meteo_raw)} lignes extraites.")
+    logger.info(f"Source 3 (CSV Météo) : {len(df_meteo_raw)} lignes extraites.")
 
     # Source 4: Base SQLite du catalogue
     conn_catalogue = sqlite3.connect(SOURCES_DIR / "source_catalogue.db")
     df_producteurs_raw = pd.read_sql("SELECT * FROM producteurs", conn_catalogue)
     df_produits_raw = pd.read_sql("SELECT * FROM produits", conn_catalogue)
-    #df_approvisionnement_raw = pd.read_sql("SELECT * FROM approvisionnement", conn_catalogue)
+    df_approvisionnement_raw = pd.read_sql("SELECT * FROM approvisionnement", conn_catalogue)
     conn_catalogue.close()
 
-    print("Source 4 (SQLite Catalogue) : Tables produits et producteurs extraites.")
+    logger.info("Source 4 (SQLite Catalogue) : Tables produits et producteurs extraites.")
 
 
     # ==========================================
     # 3. TRANSFORMATION & NETTOYAGE (T)
     # ==========================================
-    print("\n--- 🛠 PHASE DE LA TRANSFORMATION ---")
+    logger.info("\n--- 🛠 PHASE DE LA TRANSFORMATION ---")
 
     # --- A. Transformation DIM_CLIENT ---
     df_client_clean = pd.DataFrame()
@@ -127,7 +155,7 @@ def main():
 
     # Suppression des doublons naturels
     df_client_clean = df_client_clean.drop_duplicates(subset=['id_client'])
-    print("✔ Dimension Clients nettoyée et normalisée.")
+    logger.info("✔ Dimension Clients nettoyée et normalisée.")
 
     # --- B. Transformation DIM_PRODUIT ---
     # Correction de l'encodage brisé (Ex: "Ã‰picerie" -> "Épicerie")
@@ -144,7 +172,7 @@ def main():
     df_produit_clean['certification_bio_producteur'] = df_catalogue_merged['certification_bio']
 
     df_produit_clean = df_produit_clean.drop_duplicates(subset=['id_produit'])
-    print("✔ Dimension Produits nettoyée (encodages UTF-8 réparés).")
+    logger.info("✔ Dimension Produits nettoyée (encodages UTF-8 réparés).")
 
     # --- C. Transformation DIM_METEO ---
     df_meteo_clean = pd.DataFrame()
@@ -161,7 +189,7 @@ def main():
     df_meteo_clean['pluie_mm'] = df_meteo_clean['pluie_mm'].fillna(0.0) # S'il ne pleut pas, on met 0
 
     df_meteo_clean = df_meteo_clean.dropna(subset=['date_meteo', 'ville']).drop_duplicates(subset=['date_meteo', 'ville'])
-    print("✔ Dimension Météo nettoyée (valeurs aberrantes -999 supprimées et imputées).")
+    logger.info("✔ Dimension Météo nettoyée (valeurs aberrantes -999 supprimées et imputées).")
 
 
     # --- D. Transformation FAIT_COMMANDE ---
@@ -189,10 +217,11 @@ def main():
     # ==========================================
     # 4. CHARGEMENT & ET MAPPING DES CLÉS SURROGATE (L)
     # ==========================================
-    print("\n--- 💾 PHASE DU CHARGEMENT (Génération Clés Surrogate) ---")
+    logger.info("\n--- 💾 PHASE DU CHARGEMENT (Génération Clés Surrogate) ---")
 
     # Étape 1 : Insertion des dimensions pour générer les clés surrogate auto-incrémentées dans SQLite
     df_client_clean.to_sql('dim_client', conn_cible, if_exists='append', index=False)
+
     df_produit_clean.to_sql('dim_produit', conn_cible, if_exists='append', index=False)
     df_meteo_clean.to_sql('dim_meteo', conn_cible, if_exists='append', index=False)
 
@@ -219,15 +248,15 @@ def main():
     # Insertion de la table de faits
     df_faits_final.to_sql('fait_commande', conn_cible, if_exists='append', index=False)
 
-    print("✔ Table de Faits 'fait_commande' alimentée avec succès avec toutes les Clés Surrogate.")
+    logger.info("✔ Table de Faits 'fait_commande' alimentée avec succès avec toutes les Clés Surrogate.")
 
     # --- VERIFICATION ---
-    print("\n--- 🔍 APERÇU RAPIDE DE LA TABLE DE FAITS CRÉÉE ---")
+    logger.info("\n--- 🔍 APERÇU RAPIDE DE LA TABLE DE FAITS CRÉÉE ---")
     df_verif = pd.read_sql("SELECT * FROM fait_commande LIMIT 5", conn_cible)
-    print(df_verif.to_string())
+    logger.info(df_verif.to_string())
 
     conn_cible.close()
-    print("\n🎉 Processus ETL terminé. Le fichier 'entrepot_final.db' est prêt pour l'analyse analytique.")
+    logger.info("\n🎉 Processus ETL terminé. Le fichier 'entrepot_final.db' est prêt pour l'analyse analytique.")
 
 
 if (__name__) == "__main__":

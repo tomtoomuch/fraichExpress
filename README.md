@@ -58,11 +58,15 @@ graph TD
 
 ## Modélisations des données
 
+Nous constituons 3 bases de données tout au long de l'ETL :
+
+* nous récupérons d'abord les données depuis les multiples sources, les nettoyons et les écrivons dans une base de données relationnelle sqlite qui est la base de 'vérité' ou base 'métier'.
+
 ### Dictionnaire de données 'métiers'
 
 > Se préoccuper des surrogate_key à l'insertion des données
 
-#### Table : ```clients```
+#### Table : ```clean_clients```
 
 | Nom de la colonne | Type de donnée |   Contraintes    |              Description              |
 | :---------------: | :------------: | :--------------: | :-----------------------------------: |
@@ -75,7 +79,7 @@ graph TD
 |       ville       |  VARCHAR(30)   |     NOT NULL     |          Ville de résidence.          |
 |    code_postal    |  VARCHAR(10)   |     NOT NULL     |       Code postal de résidence.       |
 
-#### Table : ```produits```
+#### Table : ```clean_produits```
 
 | Nom de la colonne | Type de donnée |   Contraintes    |                      Description                       |
 | :---------------: | :------------: | :--------------: | :----------------------------------------------------: |
@@ -87,7 +91,7 @@ graph TD
 |   prix_unitaire   |      REAL      |     NOT NULL     |                Prix standard par unité.                |
 |      saison       |  VARCHAR(30)   |     NOT NULL     | Saison de pointe du produit (toute_annee, ete, hiver). |
 
-#### Table : ```producteurs```
+#### Table : ```clean_producteurs```
 
 | Nom de la colonne | Type de donnée | Contraintes           | Description                               |
 | :---------------- | :------------- | :-------------------- | :---------------------------------------- |
@@ -98,7 +102,7 @@ graph TD
 | certification_bio | INTEGER        | NOT NULL, CHECK(0, 1) | Statut de certification bio (0 ou 1).     |
 | date_adhesion     | DATE           | NOT NULL              | Date d'adhésion du producteur.            |
 
-#### Table : ```commandes```
+#### Table : ```clean_commandes```
 
 | Nom de la colonne | Type de donnée | Contraintes                     | Description                                                   |
 | :---------------- | :------------- | :------------------------------ | :------------------------------------------------------------ |
@@ -109,7 +113,7 @@ graph TD
 | mode_livraison    | VARCHAR(30)    | NOT NULL                        | Méthode de livraison (Domicile, Point relais, Retrait ferme). |
 | id_client         | VARCHAR(30)    | FOREIGN KEY (clients.id_client) | Lien vers la table `clients`.                                 |
 
-#### Table : ```annulations```
+#### Table : ```clean_annulations```
 
 | Nom de la colonne  | Type de donnée | Contraintes                         | Description                                                |
 | :----------------- | :------------- | :---------------------------------- | :--------------------------------------------------------- |
@@ -120,18 +124,18 @@ graph TD
 | id_commande        | VARCHAR(10)    | FOREIGN KEY (commandes.id_commande) | Lien vers la commande annulée.                             |
 | **Unique combiné** |                | UNIQUE(id_annulation, id_commande)  | Assure un enregistrement unique d'annulation par commande. |
 
-#### Table : ```lignes_commande```
+#### Table : ```clean_lignes_commande```
 
-| Nom de la colonne | Type de donnée | Contraintes | Description |
-| :--- | :--- | :--- | :--- |
-| uid_ligne_commande | INTEGER | PRIMARY KEY | Identifiant unique interne de la ligne de commande. |
-| id_produit | INTEGER | FOREIGN KEY (produits.id_produit) | Lien vers le produit commandé. |
-| id_commande | VARCHAR(10) | FOREIGN KEY (commandes.id_commande) | Lien vers la commande contenant la ligne. |
-| quantite_commandee | REAL | NOT NULL | Quantité commandée pour ce produit/commande. |
-| prix_unitaire_applique | REAL | NOT NULL | Prix appliqué au moment de la commande. |
-| **Unique Combiné** | | UNIQUE(id_produit, id_commande) | Empêche les entrées de produits en double par commande. |
+|    Nom de la colonne   | Type de donnée | Contraintes | Description |
+| :--------------------- | :------------- | :---------- | :---------- |
+| uid_ligne_commande     | INTEGER        | PRIMARY KEY | Identifiant unique interne de la ligne de commande. |
+| id_produit             | INTEGER        | FOREIGN KEY (produits.id_produit) | Lien vers le produit commandé. |
+| id_commande            | VARCHAR(10)    | FOREIGN KEY (commandes.id_commande) | Lien vers la commande contenant la ligne. |
+| quantite_commandee     | REAL           | NOT NULL | Quantité commandée pour ce produit/commande. |
+| prix_unitaire_applique | REAL           | NOT NULL | Prix appliqué au moment de la commande. |
+| **Unique Combiné**     | | UNIQUE(id_produit, id_commande) | Empêche les entrées de produits en double par commande. |
 
-#### Table : ```livraisons```
+#### Table : ```clean_livraisons```
 
 | Nom de la colonne | Type de donnée | Contraintes | Description |
 | :--- | :--- | :--- | :--- |
