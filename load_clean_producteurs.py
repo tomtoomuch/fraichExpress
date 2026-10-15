@@ -120,7 +120,7 @@ def normaliser_commune(commmune):
 
 def load_data():
     try:
-        donnees_approvisionnement, donnees_produits, donnees_producteurs = (
+        donnees_approvisionnement, donnees_producteurs, donnees_produits = (
             charger_sqlite()
         )
 

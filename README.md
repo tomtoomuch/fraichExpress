@@ -258,4 +258,18 @@ graph TD
     les nettoie et les normalise
     puis les charge dans la base SQL fraichexpress.db
 
-2. **
+2. **load_clean_sqlite.py**
+    Récupère les données d'approvisionnement, des producteurs et de leurs produits depuis le fichier ```source_catalogue.db```.
+    La fonction retourne les données sous forme de dataframes
+
+3. **load_clean_produits.py**
+
+4. **load_clean_producteurs.py**
+
+5. **load_clean_approvisionnement.py**
+
+6. **load_clean_commande.py**
+
+7. **load_clean_meteo.py**
+
+8. **load_base_analytique.py**
