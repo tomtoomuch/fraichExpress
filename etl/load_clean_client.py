@@ -5,19 +5,19 @@ import logging
 from pathlib import Path
 
 from datetime import datetime
-
+from chemins import *
 
 # -------------------------------------------------------------------------------
 # Configuration
 # -------------------------------------------------------------------------------
 
-SOURCE_FILE = "data/sources/clients.json"
-DATABASE_FILE = "data/fraichexpress.db"
+SOURCE_FILE = SOURCES_DIR / "clients.json"
+DATABASE_FILE = DATA_DIR / "fraichexpress.db"
 LOG_FILE = "load_clean_clients.log"
 
 # Génération d'un horodatage pour le nom du fichier de journalisation
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-LOG_FILE = f"{timestamp}_{LOG_FILE}"
+LOG_FILE = LOGS_DIR / f"{timestamp}_{LOG_FILE}"
 
 # -------------------------------------------------------------------------------
 # Configuration du logging

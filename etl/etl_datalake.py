@@ -1,11 +1,13 @@
 import sqlite3
 import pandas as pd
 import numpy as np
+from chemins import *
+import json
 
 # ==========================================
 # 1. INITIALISATION DE LA BASE CIBLE
 # ==========================================
-DB_CIBLE = "entrepot_final.db"
+DB_CIBLE = DATA_DIR / "entrepot_final.db"
 conn_cible = sqlite3.connect(DB_CIBLE)
 cursor = conn_cible.cursor()
 
@@ -79,41 +81,28 @@ print("✔ Base de données cible et schéma en étoile initialisés.")
 print("\n--- 🚀 PHASE DE L'EXTRACTION ---")
 
 # Source 1: Fichier JSON des clients
-# df_clients_raw = pd.read_json("clients.json")
-# Remplacé par les données reçues pour l'exemple :
-import json
-json_data = [1] # Vos données JSON envoyées en texte
-df_clients_raw = pd.read_json(json.dumps(json_data))
+df_clients_raw = pd.read_json(SOURCES_DIR / "clients.json")
+
 print(f"Source 1 (JSON Clients) : {len(df_clients_raw)} lignes extraites.")
 
 # Source 2: Fichier CSV des commandes (délimiteur ';')
-# df_commandes_raw = pd.read_csv("commandes.csv", sep=";")
-from io import StringIO
-csv_commandes_data = """id_commande;id_client;date_commande;id_produit;quantite;prix_unitaire_applique;statut;mode_livraison;motif_annulation
-CMD000001;C0070;01/01/2025;18;1;4.20;Livree;point_relais;
-...""" # (Remplacé par la chaîne complète du fichier 2 reçu)
-df_commandes_raw = pd.read_csv(StringIO(csv_commandes_data), sep=";", dtype=str)
+df_commandes_raw = pd.read_csv(SOURCES_DIR / "commandes_2025.csv", sep=";", encoding="latin-1")
+
 print(f"Source 2 (CSV Commandes) : {len(df_commandes_raw)} lignes extraites.")
 
 # Source 3: Fichier CSV de la météo (délimiteur ';')
-# df_meteo_raw = pd.read_csv("meteo.csv", sep=";")
-csv_meteo_data = """date;ville;temp_max;pluie_mm
-2025-01-01;Montpellier;3,4;0,0
-...""" # (Remplacé par la chaîne complète du fichier 3 reçu)
-df_meteo_raw = pd.read_csv(StringIO(csv_meteo_data), sep=";", dtype=str)
+df_meteo_raw = pd.read_csv(SOURCES_DIR / "meteo.csv", sep=";")
+
 print(f"Source 3 (CSV Météo) : {len(df_meteo_raw)} lignes extraites.")
 
-# Source 4: Base SQLite du Producteur (Fichier binaire SQLite fourni)
-# conn_prod = sqlite3.connect("producteur.db")
-# Pour l'exemple, nous simulons la lecture des tables présentes dans votre fichier 4
-df_prod_produits = pd.DataFrame([
-    {"id_produit": 1, "libelle": "Sel de Camargue", "categorie": "Ã‰picerie", "unite": "pot", "prix_unitaire": 2.50, "id_producteur": 1},
-    {"id_produit": 18, "libelle": "Jus de pomme", "categorie": "Boissons", "unite": "bouteille", "prix_unitaire": 3.20, "id_producteur": 1}
-]) # Rempli à partir des structures décodées de votre fichier 4
-df_prod_producteurs = pd.DataFrame([
-    {"id_producteur": 1, "nom": "Camargue Gourmande", "commune": "Aigues-Mortes", "certification_bio": 1}
-])
-print("Source 4 (SQLite Producteur) : Tables produits et producteurs extraites.")
+# Source 4: Base SQLite du catalogue
+conn_catalogue = sqlite3.connect(SOURCES_DIR / "source_catalogue.db")
+df_producteurs_raw = pd.read_sql("SELECT * FROM producteurs", conn_catalogue)
+df_produits_raw = pd.read_sql("SELECT * FROM produits", conn_catalogue)
+df_approvisionnement_raw = pd.read_sql("SELECT * FROM approvisionnement", conn_catalogue)
+conn_catalogue.close()
+
+print("Source 4 (SQLite Catalogue) : Tables produits et producteurs extraites.")
 
 
 # ==========================================
@@ -141,17 +130,17 @@ print("✔ Dimension Clients nettoyée et normalisée.")
 
 # --- B. Transformation DIM_PRODUIT ---
 # Correction de l'encodage brisé (Ex: "Ã‰picerie" -> "Épicerie")
-df_prod_merged = pd.merge(df_prod_produits, df_prod_producteurs, on="id_producteur", how="left")
+df_catalogue_merged = pd.merge(df_produits_raw, df_producteurs_raw, on="id_producteur", how="left")
 
 df_produit_clean = pd.DataFrame()
-df_produit_clean['id_produit'] = df_prod_merged['id_produit']
-df_produit_clean['libelle'] = df_prod_merged['libelle'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
-df_produit_clean['categorie'] = df_prod_merged['categorie'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore').str.capitalize()
-df_produit_clean['unite'] = df_prod_merged['unite'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
-df_produit_clean['prix_unitaire_catalogue'] = df_prod_merged['prix_unitaire']
-df_produit_clean['nom_producteur'] = df_prod_merged['nom'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
-df_produit_clean['commune_producteur'] = df_prod_merged['commune'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
-df_produit_clean['certification_bio_producteur'] = df_prod_merged['certification_bio']
+df_produit_clean['id_produit'] = df_catalogue_merged['id_produit']
+df_produit_clean['libelle'] = df_catalogue_merged['libelle'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
+df_produit_clean['categorie'] = df_catalogue_merged['categorie'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore').str.capitalize()
+df_produit_clean['unite'] = df_catalogue_merged['unite'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
+df_produit_clean['prix_unitaire_catalogue'] = df_catalogue_merged['prix_unitaire']
+df_produit_clean['nom_producteur'] = df_catalogue_merged['nom'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
+df_produit_clean['commune_producteur'] = df_catalogue_merged['commune'].str.encode('utf-8', errors='ignore').str.decode('utf-8', errors='ignore')
+df_produit_clean['certification_bio_producteur'] = df_catalogue_merged['certification_bio']
 
 df_produit_clean = df_produit_clean.drop_duplicates(subset=['id_produit'])
 print("✔ Dimension Produits nettoyée (encodages UTF-8 réparés).")
@@ -184,7 +173,7 @@ df_commandes_clean['prix_unitaire_applique'] = df_commandes_clean['prix_unitaire
 df_commandes_clean['statut'] = df_commandes_clean['statut'].str.strip().str.capitalize()
 df_commandes_clean['mode_livraison'] = df_commandes_clean['mode_livraison'].str.strip().str.lower()
 df_commandes_clean['id_client'] = df_commandes_clean['id_client'].str.strip()
-df_commandes_clean['id_produit'] = df_commandes_clean['id_produit'].astype(int)
+df_commandes_clean['id_produit'] = df_commandes_clean['id_produit'].to_numeric(errors='coerce')
 
 # Élimination des lignes sans quantité valide (ex: les "N/A" présents dans vos sources)
 df_commandes_clean = df_commandes_clean.dropna(subset=['quantite', 'prix_unitaire_applique'])
