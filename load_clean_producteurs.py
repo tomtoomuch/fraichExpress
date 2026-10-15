@@ -15,13 +15,14 @@ LOG_FILE = "load_clean_producteurs.log"
 
 # Génération d'un horodatage pour le nom du fichier de journalisation
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+LOG_FILE = f"{timestamp}_{LOG_FILE}"
 
 # -------------------------------------------------------------------------------
 # Configuration du logging
 # -------------------------------------------------------------------------------
 
 logging.basicConfig(
-    filename=f"{timestamp}_{LOG_FILE}",
+    filename=f"{LOG_FILE}",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     encoding="utf-8",
