@@ -251,7 +251,13 @@ graph TD
 
 ## Exécution pipeline ETL
 
-> Les données sont extraites, transformées puis écrites dans le fichier fraichexpress.db
+> Les données sont extraites, transformées puis écrites dans le fichier fraichexpress.db, fraichexpress_analytique.db et entrepot_final.db
+
+Le pipeline est unifié et peu-être 'piloté' via une UI Streamlit depuis la racine du projet :
+
+```bash
+streamlit run main.py
+```
 
 1. **load_clean_client.py**
     Récupère les données du fichier clients.json,
