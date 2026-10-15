@@ -1,14 +1,15 @@
 import sqlite3
 import pandas as pd
 import numpy as np
-from io import StringIO
+from chemins import *
+import json
 
 def main():
 # ==========================================
 # 1. INITIALISATION DE LA BASE CIBLE
 # ==========================================
-    #DB_CIBLE = "../data/entrepot_final.db"
-    conn_cible = sqlite3.connect("entrepot_final.db")
+    DB_CIBLE = DATA_DIR / "entrepot_final.db"
+    conn_cible = sqlite3.connect(DB_CIBLE)
     cursor = conn_cible.cursor()
 
     # Activation des clés étrangères pour la base finale
@@ -81,28 +82,28 @@ def main():
     print("\n--- 🚀 PHASE DE L'EXTRACTION ---")
 
     # Source 1: Fichier JSON des clients
-    df_clients_raw = pd.read_json("../data/sources/clients.json")
-    # Remplacé par les données reçues pour l'exemple :
-    
+    df_clients_raw = pd.read_json(SOURCES_DIR / "clients.json")
+
     print(f"Source 1 (JSON Clients) : {len(df_clients_raw)} lignes extraites.")
 
     # Source 2: Fichier CSV des commandes (délimiteur ';')
-    df_commandes_raw = pd.read_csv("../data/sources/commandes_2025.csv", sep=";")
-    
+    df_commandes_raw = pd.read_csv(SOURCES_DIR / "commandes_2025.csv", sep=";", encoding="latin-1")
+
     print(f"Source 2 (CSV Commandes) : {len(df_commandes_raw)} lignes extraites.")
 
     # Source 3: Fichier CSV de la météo (délimiteur ';')
-    df_meteo_raw = pd.read_csv("../data/sources/meteo.csv", sep=";")
-    
+    df_meteo_raw = pd.read_csv(SOURCES_DIR / "meteo.csv", sep=";")
+
     print(f"Source 3 (CSV Météo) : {len(df_meteo_raw)} lignes extraites.")
 
-    # Source 4: Base SQLite du Producteur (Fichier binaire SQLite fourni)
-    connexion = sqlite3.connect("../data/sources/source_catalogue.db")
-    df_produits_raw = pd.read_sql_query("SELECT * FROM produits", connexion)
-    df_producteurs_raw = pd.read_sql_query("SELECT * FROM producteurs", connexion)
-    df_approvisionnement_raw = pd.read_sql_query("SELECT * FROM approvisionnement", connexion)
-    connexion.close()
-    print("Source 4 (SQLite Catalogue) : Tables produits, producteurs et approvisionnement extraites.")
+    # Source 4: Base SQLite du catalogue
+    conn_catalogue = sqlite3.connect(SOURCES_DIR / "source_catalogue.db")
+    df_producteurs_raw = pd.read_sql("SELECT * FROM producteurs", conn_catalogue)
+    df_produits_raw = pd.read_sql("SELECT * FROM produits", conn_catalogue)
+    df_approvisionnement_raw = pd.read_sql("SELECT * FROM approvisionnement", conn_catalogue)
+    conn_catalogue.close()
+
+    print("Source 4 (SQLite Catalogue) : Tables produits et producteurs extraites.")
 
 
     # ==========================================

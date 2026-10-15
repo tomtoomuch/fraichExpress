@@ -7,6 +7,7 @@ import pandas as pd
 import sqlite3 as sqlite
 import logging
 from datetime import datetime
+from chemins import *
 
 # Déclaration des variables globales
 RACINE = Path("./")

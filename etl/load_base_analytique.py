@@ -17,18 +17,18 @@ import sqlite3
 import logging
 
 from datetime import datetime
-
+from chemins import *
 
 # -------------------------------------------------------------------------------
 # Configuration
 # -------------------------------------------------------------------------------
 
-DATABASE_FILE = "../data/fraichexpress.db"
+DATABASE_FILE = DATA_DIR / "fraichexpress.db"
 LOG_FILE = "load_base_analytique.log"
 
 # Génération d'un horodatage pour le nom du fichier de journalisation
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-LOG_FILE = f"{timestamp}_{LOG_FILE}"
+LOG_FILE = LOGS_DIR / f"{timestamp}_{LOG_FILE}"
 
 # -------------------------------------------------------------------------------
 # Configuration du logging
