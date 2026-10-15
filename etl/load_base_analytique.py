@@ -485,175 +485,178 @@ def creer_fait_ventes(
 # -------------------------------------------------------------------------------
 # PROGRAMME PRINCIPAL
 # -------------------------------------------------------------------------------
+def main():
+    try:
 
-try:
+        logger.info(
+            "===== Début ETL base analytique ====="
+        )
 
-    logger.info(
-        "===== Début ETL base analytique ====="
+        # ---------------------------------------------------------------------------
+        # Connexion SQLite
+        # ---------------------------------------------------------------------------
+
+        conn = sqlite3.connect(
+            DATABASE_FILE
+        )
+
+        # ---------------------------------------------------------------------------
+        # Lecture des tables clean
+        # ---------------------------------------------------------------------------
+
+        df_commandes = charger_table(
+            conn,
+            "clean_commandes"
+        )
+
+        df_clients = charger_table(
+            conn,
+            "clean_clients"
+        )
+
+        df_produits = charger_table(
+            conn,
+            "clean_produits"
+        )
+
+        df_producteurs = charger_table(
+            conn,
+            "clean_producteurs"
+        )
+
+        df_meteo = charger_table(
+            conn,
+            "clean_meteo"
+        )
+
+        # ---------------------------------------------------------------------------
+        # Création des dimensions
+        # ---------------------------------------------------------------------------
+
+        dim_client = creer_dim_client(
+            df_clients
+        )
+
+        dim_date = creer_dim_date(
+            df_commandes
+        )
+
+        dim_produit = creer_dim_produit(
+            df_produits
+        )
+
+        dim_producteur = creer_dim_producteur(
+            df_producteurs
+        )
+
+        dim_livraison = creer_dim_livraison(
+            df_commandes
+        )
+
+        dim_meteo = creer_dim_meteo(
+            df_meteo
+        )
+
+        logger.info(
+            "Dimensions créées"
+        )
+
+        # ---------------------------------------------------------------------------
+        # Création de la table de faits
+        # ---------------------------------------------------------------------------
+
+        fait_ventes = creer_fait_ventes(
+        df_commandes,
+        df_clients,
+        df_produits,
+        dim_date,
+        dim_livraison,
+        dim_meteo
     )
 
-    # ---------------------------------------------------------------------------
-    # Connexion SQLite
-    # ---------------------------------------------------------------------------
+        logger.info(
+            "FAIT_VENTES créée : %d lignes",
+            len(fait_ventes)
+        )
 
-    conn = sqlite3.connect(
-        DATABASE_FILE
-    )
+        # ---------------------------------------------------------------------------
+        # Chargement SQLite
+        # ---------------------------------------------------------------------------
 
-    # ---------------------------------------------------------------------------
-    # Lecture des tables clean
-    # ---------------------------------------------------------------------------
+        dim_client.to_sql(
+            "DIM_CLIENT",
+            conn,
+            if_exists="replace",
+            index=False
+        )
 
-    df_commandes = charger_table(
-        conn,
-        "clean_commandes"
-    )
+        dim_date.to_sql(
+            "DIM_DATE",
+            conn,
+            if_exists="replace",
+            index=False
+        )
 
-    df_clients = charger_table(
-        conn,
-        "clean_clients"
-    )
+        dim_produit.to_sql(
+            "DIM_PRODUIT",
+            conn,
+            if_exists="replace",
+            index=False
+        )
 
-    df_produits = charger_table(
-        conn,
-        "clean_produits"
-    )
+        dim_producteur.to_sql(
+            "DIM_PRODUCTEUR",
+            conn,
+            if_exists="replace",
+            index=False
+        )
 
-    df_producteurs = charger_table(
-        conn,
-        "clean_producteurs"
-    )
+        dim_livraison.to_sql(
+            "DIM_LIVRAISON",
+            conn,
+            if_exists="replace",
+            index=False
+        )
 
-    df_meteo = charger_table(
-        conn,
-        "clean_meteo"
-    )
+        dim_meteo.to_sql(
+            "DIM_METEO",
+            conn,
+            if_exists="replace",
+            index=False
+        )
 
-    # ---------------------------------------------------------------------------
-    # Création des dimensions
-    # ---------------------------------------------------------------------------
+        fait_ventes.to_sql(
+            "FAIT_VENTES",
+            conn,
+            if_exists="replace",
+            index=False
+        )
 
-    dim_client = creer_dim_client(
-        df_clients
-    )
+        # ---------------------------------------------------------------------------
+        # Fermeture
+        # ---------------------------------------------------------------------------
 
-    dim_date = creer_dim_date(
-        df_commandes
-    )
+        conn.close()
 
-    dim_produit = creer_dim_produit(
-        df_produits
-    )
+        logger.info(
+            "===== Fin ETL base analytique ====="
+        )
 
-    dim_producteur = creer_dim_producteur(
-        df_producteurs
-    )
+        print(
+            "Base analytique chargée avec succès."
+        )
 
-    dim_livraison = creer_dim_livraison(
-        df_commandes
-    )
+    except Exception as e:
 
-    dim_meteo = creer_dim_meteo(
-        df_meteo
-    )
+        logger.exception(
+            "Erreur lors du chargement de la base analytique : %s",
+            e
+        )
 
-    logger.info(
-        "Dimensions créées"
-    )
+        print(
+            "Une erreur est survenue. Consultez le fichier de log :",
+            LOG_FILE
+        )
 
-    # ---------------------------------------------------------------------------
-    # Création de la table de faits
-    # ---------------------------------------------------------------------------
-
-    fait_ventes = creer_fait_ventes(
-    df_commandes,
-    df_clients,
-    df_produits,
-    dim_date,
-    dim_livraison,
-    dim_meteo
-)
-
-    logger.info(
-        "FAIT_VENTES créée : %d lignes",
-        len(fait_ventes)
-    )
-
-    # ---------------------------------------------------------------------------
-    # Chargement SQLite
-    # ---------------------------------------------------------------------------
-
-    dim_client.to_sql(
-        "DIM_CLIENT",
-        conn,
-        if_exists="replace",
-        index=False
-    )
-
-    dim_date.to_sql(
-        "DIM_DATE",
-        conn,
-        if_exists="replace",
-        index=False
-    )
-
-    dim_produit.to_sql(
-        "DIM_PRODUIT",
-        conn,
-        if_exists="replace",
-        index=False
-    )
-
-    dim_producteur.to_sql(
-        "DIM_PRODUCTEUR",
-        conn,
-        if_exists="replace",
-        index=False
-    )
-
-    dim_livraison.to_sql(
-        "DIM_LIVRAISON",
-        conn,
-        if_exists="replace",
-        index=False
-    )
-
-    dim_meteo.to_sql(
-        "DIM_METEO",
-        conn,
-        if_exists="replace",
-        index=False
-    )
-
-    fait_ventes.to_sql(
-        "FAIT_VENTES",
-        conn,
-        if_exists="replace",
-        index=False
-    )
-
-    # ---------------------------------------------------------------------------
-    # Fermeture
-    # ---------------------------------------------------------------------------
-
-    conn.close()
-
-    logger.info(
-        "===== Fin ETL base analytique ====="
-    )
-
-    print(
-        "Base analytique chargée avec succès."
-    )
-
-except Exception as e:
-
-    logger.exception(
-        "Erreur lors du chargement de la base analytique : %s",
-        e
-    )
-
-    print(
-        "Une erreur est survenue. Consultez le fichier de log :",
-        LOG_FILE
-    )
+if (__name__) == "__main__":
+    main()

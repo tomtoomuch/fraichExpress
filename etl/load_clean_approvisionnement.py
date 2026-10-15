@@ -4,7 +4,7 @@ import sqlite3
 import logging
 from pathlib import Path
 from datetime import datetime
-from load_clean_sqlite import charger_sqlite
+from etl.load_clean_sqlite import charger_sqlite
 
 # -------------------------------------------------------------------------------
 # Configuration
@@ -103,13 +103,9 @@ def load_data():
         )
         raise
 
-
-# -------------------------------------------------------------------------------
-# Programme principal
-# -------------------------------------------------------------------------------
-if __name__ == "__main__":
+def main():
     try:
-
+    
         logger.info("===== Début du chargement des approvisionnements =====")
 
         # Lecture des données
@@ -191,3 +187,10 @@ if __name__ == "__main__":
         logger.exception("Erreur lors du chargement des producteurs : %s", e)
 
         print("Une erreur est survenue. Consultez le fichier de log :", LOG_FILE)
+
+
+# -------------------------------------------------------------------------------
+# Programme principal
+# -------------------------------------------------------------------------------
+if __name__ == "__main__":
+    main()

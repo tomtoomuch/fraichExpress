@@ -210,9 +210,25 @@ map_meteo = pd.read_sql("SELECT meteo_sk, date_meteo, ville FROM dim_meteo", con
 df_faits = pd.merge(df_commandes_clean, map_clients, on="id_client", how="inner")
 
 # Jointure Produit
-Utilisez le code avec précaution.df_faits = pd.merge(df_faits, map_produits, on="id_produit", how="inner")Pour mapper la météo, il faut d'abord connaître la ville du client qui a passé la commandedf_client_villes = df_client_clean[['id_client', 'ville']]df_faits = pd.merge(df_faits, df_client_villes, on="id_client", how="left")Jointure Météo (basée sur Date de commande et Ville du client)df_faits = pd.merge(df_faits,map_meteo,left_on=["date_commande", "ville"],right_on=["date_meteo", "ville"],how="left")Étape 4 : Sélection et ordonnancement final des colonnes pour la table de faitsdf_faits_final = df_faits[['id_commande', 'client_sk', 'produit_sk', 'meteo_sk','date_commande', 'quantite', 'prix_unitaire_applique','statut', 'mode_livraison', 'motif_annulation']]Insertion de la table de faitsdf_faits_final.to_sql('fait_commande', conn_cible, if_exists='append', index=False)print("✔ Table de Faits 'fait_commande' alimentée avec succès avec toutes les Clés Surrogate.")--- VERIFICATION ---print("\n--- 🔍 APERÇU RAPIDE DE LA TABLE DE FAITS CRÉÉE ---")df_verif = pd.read_sql("SELECT * FROM fait_commande LIMIT 5", conn_cible)print(df_verif.to_string())conn_cible.close()print("\n🎉 Processus ETL terminé. Le fichier 'entrepot_final.db' est prêt pour l'analyse analytique.")
-### Améliorations de nettoyage intégrées au script pour vos fichiers :
-1. **Normalisation des Dates** : Vos fichiers possèdent des dates écrites en `YYYY-MM-DD` et en `DD/MM/YYYY`. L'option `format='mixed'` de Pandas unifie le tout proprement.
-2. **Réparation des encodages** : Le fichier SQLite producteur contenait des textes corrompus (`Ã‰picerie`). Le script force un ré-encodage correct en `UTF-8`.
-3. **Imputation de la Météo** : Le script détecte les valeurs manquantes ou aberrantes comme le `-999` présent dans votre fichier météo et les remplace dynamiquement par la moyenne glissante de la ville concernée.
-4. **Jointure Contextuelle** : Pour lier une commande à la bonne ligne
+df_faits = pd.merge(df_faits, map_produits, on="id_produit", how="inner")
+
+df_client_villes = df_client_clean[['id_client', 'ville']]
+df_faits = pd.merge(df_faits, df_client_villes, on="id_client", how="left")
+# Jointure Météo (basée sur Date de commande et Ville du client)
+df_faits = pd.merge(df_faits, map_meteo, left_on=["date_commande", "ville"], right_on=["date_meteo", "ville"], how="left")
+
+# Étape 4 : Sélection et ordonnancement final des colonnes pour la table de faits
+df_faits_final = df_faits[['id_commande', 'client_sk', 'produit_sk', 'meteo_sk','date_commande', 'quantite', 'prix_unitaire_applique','statut', 'mode_livraison', 'motif_annulation']]
+
+# Insertion de la table de faits
+df_faits_final.to_sql('fait_commande', conn_cible, if_exists='append', index=False)
+
+print("✔ Table de Faits 'fait_commande' alimentée avec succès avec toutes les Clés Surrogate.")
+
+# --- VERIFICATION ---
+print("\n--- 🔍 APERÇU RAPIDE DE LA TABLE DE FAITS CRÉÉE ---")
+df_verif = pd.read_sql("SELECT * FROM fait_commande LIMIT 5", conn_cible)
+print(df_verif.to_string())
+
+conn_cible.close()
+print("\n🎉 Processus ETL terminé. Le fichier 'entrepot_final.db' est prêt pour l'analyse analytique.")
