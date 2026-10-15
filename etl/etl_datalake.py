@@ -100,7 +100,7 @@ def main():
     conn_catalogue = sqlite3.connect(SOURCES_DIR / "source_catalogue.db")
     df_producteurs_raw = pd.read_sql("SELECT * FROM producteurs", conn_catalogue)
     df_produits_raw = pd.read_sql("SELECT * FROM produits", conn_catalogue)
-    df_approvisionnement_raw = pd.read_sql("SELECT * FROM approvisionnement", conn_catalogue)
+    #df_approvisionnement_raw = pd.read_sql("SELECT * FROM approvisionnement", conn_catalogue)
     conn_catalogue.close()
 
     print("Source 4 (SQLite Catalogue) : Tables produits et producteurs extraites.")
@@ -165,6 +165,7 @@ def main():
 
 
     # --- D. Transformation FAIT_COMMANDE ---
+    df_commandes_clean = pd.DataFrame()
     df_commandes_clean = df_commandes_raw.copy()
     df_commandes_clean['date_commande'] = pd.to_datetime(df_commandes_clean['date_commande'], format='mixed').dt.strftime('%Y-%m-%d')
     df_commandes_clean['quantite'] = df_commandes_clean['quantite'].str.replace(',', '.').astype(float)
@@ -174,7 +175,12 @@ def main():
     df_commandes_clean['statut'] = df_commandes_clean['statut'].str.strip().str.capitalize()
     df_commandes_clean['mode_livraison'] = df_commandes_clean['mode_livraison'].str.strip().str.lower()
     df_commandes_clean['id_client'] = df_commandes_clean['id_client'].str.strip()
-    df_commandes_clean['id_produit'] = df_commandes_clean['id_produit'].astype(int)
+    ids_produits = pd.to_numeric(
+        df_commandes_clean['id_produit'],
+        errors='coerce'
+        )
+    ids_produits = ids_produits.replace([np.inf, -np.inf], np.nan)
+    df_commandes_clean['id_produit'] = ids_produits.astype("Int64")
 
     # Élimination des lignes sans quantité valide (ex: les "N/A" présents dans vos sources)
     df_commandes_clean = df_commandes_clean.dropna(subset=['quantite', 'prix_unitaire_applique'])
