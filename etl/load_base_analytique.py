@@ -23,7 +23,7 @@ from datetime import datetime
 # Configuration
 # -------------------------------------------------------------------------------
 
-DATABASE_FILE = "data/fraichexpress.db"
+DATABASE_FILE = "../data/fraichexpress.db"
 LOG_FILE = "load_base_analytique.log"
 
 # Génération d'un horodatage pour le nom du fichier de journalisation
