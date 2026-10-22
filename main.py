@@ -19,7 +19,11 @@ def populate_datalake():
     etl_datalake.main()
     print("Le datalake est rempli avec succès.")
 
+def calcul_ca_annee():
+    print("Calcul du CA annuel")
+
 if (__name__) == "__main__":
+    st.header("Exploration des données - FraichExpress")
 
     st.button("Lancer le processus ETL", on_click=run_etl_process)
 
