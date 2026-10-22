@@ -163,7 +163,7 @@ def creation_datalake():
             uid_fait_vente INTEGER PRIMARY KEY,
             id_fait_vente INTEGER NOT NULL UNIQUE,
             quantite REAL NOT NULL,
-            prix_unitaire REAL NOT NULL,
+            prix_unitaire_applique REAL NOT NULL,
             montant_vente REAL NOT NULL,
             uid_dim_meteo INTEGER NOT NULL,
             uid_dim_commande INTEGER NOT NULL,
@@ -249,8 +249,7 @@ def transform(df_clients_raw, df_commandes_raw, df_meteo_raw, df_producteurs_raw
 
     # Suppression des doublons naturels
     df_clients_clean = df_clients_clean.drop_duplicates(subset=["id_client"])
-    df_clients_clean.drop(columns=["nom","prenom","email"], inplace=True)
-    print(df_clients_clean)
+    df_clients_clean.drop(columns=["nom","prenom","email","adresse"], inplace=True)
     logger.info("Dimension Clients nettoyée et normalisée.")
 
     # --- D. Transformation DIM_COMMANDE ---
@@ -294,6 +293,7 @@ def transform(df_clients_raw, df_commandes_raw, df_meteo_raw, df_producteurs_raw
     df_produits_clean["certification_bio_producteur"] = df_catalogue_merged["certification_bio"]
 
     df_produits_clean = df_produits_clean.drop_duplicates(subset=["id_produit"])
+    df_produits_clean.drop(columns=["prix_unitaire_catalogue","nom_producteur","commune_producteur","certification_bio_producteur"], inplace=True)
     logger.info("Dimension Produits nettoyée (encodages UTF-8 réparés).")
 
     # --- C. Transformation DIM_METEO ---
