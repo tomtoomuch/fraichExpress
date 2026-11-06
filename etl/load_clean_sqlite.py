@@ -7,6 +7,7 @@ import pandas as pd
 import sqlite3 as sqlite
 import logging
 from datetime import datetime
+from chemins import *
 
 # Déclaration des variables globales
 RACINE = Path("./")
@@ -18,10 +19,11 @@ LOG_FILE = "load_sqlite_data.log"
 
 # Génération d'un horodatage pour le nom du fichier de journalisation
 timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+LOG_FILE = f"{timestamp}_{LOG_FILE}"
 
 # Initialisation de la journalisation
 logging.basicConfig(
-    filename=f"{timestamp}_{LOG_FILE}",
+    filename=f"{LOG_FILE}",
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     encoding="utf-8"
@@ -179,17 +181,17 @@ def charger_sqlite():
     return donnees_approvisionnement,donnees_producteurs,donnees_produits
 
 
-def stocker_sqlite(
+""" def stocker_sqlite(
     donnees_approvisionnement,
     donnees_producteurs,
     donnees_produits
 ):
 
-    # Recherche du fichier "source_catalogue.db"
+    # Recherche du fichier "fraichexpress.db"
     for chemin in DOSSIER_DONNEES.rglob("fraichexpress.db"):
         # Stockage du chemin trouvé dans une globale
         CHEMIN_BDD_DEST = chemin
-
+        print(chemin)
         try:
             # Stockage de l'uri de la BDD en incluant le paramètre
             # garantissant d'accéder aux données en lecture seule
@@ -242,9 +244,9 @@ def stocker_sqlite(
             )
             raise RuntimeError(
                 f"Impossible de se connecter à la base SQLite : '{CHEMIN_BDD_SOURCE}'"
-                ) from error
+                ) from error """
 
 ## POINT D'ENTREE SI EXECUTE EN CLI DEPUIS LE TERMINAL
 if __name__ == "__main__":
     donnees_approvisionnement, donnees_producteurs, donnees_produits = charger_sqlite()
-    stocker_sqlite(donnees_approvisionnement, donnees_producteurs, donnees_produits)
+    #stocker_sqlite(donnees_approvisionnement, donnees_producteurs, donnees_produits)
